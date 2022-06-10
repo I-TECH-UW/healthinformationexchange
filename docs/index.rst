@@ -9,6 +9,7 @@ Welcome to EMR and LIS Health Information Exchange documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+   
    OpenMRS to OpenELIS Interoperability SOP <deployomrs.md>
 
 
