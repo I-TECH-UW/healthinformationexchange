@@ -1,8 +1,0 @@
-site_name: Lab Information System to EMR Interoperability Documentation
-nav:
-    - Home: index.md
-    - About: about.md
-    - OpenMRS and OpenELIS Interoperability: deployomrs.md
-    - OpenHIE pattern: ohie.md
-theme: readthedocs
-
