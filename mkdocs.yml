@@ -1,0 +1,8 @@
+site_name: EMR and LIS Data Exchange Knowledge Base
+nav:
+    - Home: index.md
+    - About: about.md
+    - Configure OpenMRS and OpenELIS Interoperability: deployomrs.md
+    - OpenELIS Website: http://openelis-global.org
+    - OpenMRS Website: https://openmrs.org
+theme: readthedocs
