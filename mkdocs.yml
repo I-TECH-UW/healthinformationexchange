@@ -2,7 +2,10 @@ site_name: EMR and LIS Data Exchange Knowledge Base
 nav:
     - Home: index.md
     - About: about.md
-    - HIE Workflows: hie-workflows.md
+    - HIE Workflows:
+        - 'Overview': 'hie-workflows.md'
+        - 'LIS Workflows': 'lis-workflows.md'
+        - 'MPI Workflows': 'mpi-workflows.md'
     - FAQ: faq.md
     - Get Additional Help: get-additional-help.md
 theme: readthedocs
