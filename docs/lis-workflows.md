@@ -1,7 +1,7 @@
-#Overview
+# Overview
 The Lab Order and Results workflow utilizes the [FHIR Workflow Module](https://www.hl7.org/fhir/workflow-module.html) and suggested [Communication Patterns](https://www.hl7.org/fhir/workflow-communications.html#12.6.2.1) to implement the ordering of lab tests from an EMR to an LIS and resulting from LIS to EMR.
 
-#Implementing an EMR/LIS interoperability Exchange
+##Getting Started
 
 In order to implement the exchange of laboratory results between an EMR and LIS, the following steps must be taken:
 
@@ -18,10 +18,10 @@ In order to implement the exchange of laboratory results between an EMR and LIS,
     - Corrected Results
     - Specialized results (e.g., Microbiology)
 
-#Communication Overview 
-##Lab Orders
+##Communication Overview 
+###Lab Orders
 
-The lab ordr workflow follows the OpenHIE specification for standard lab ordering between an EMR and LIS. The workflow is detailed in the following sequence diagram:
+The lab order workflow follows the OpenHIE specification for standard lab ordering between an EMR and LIS. The workflow is detailed in the following sequence diagram:
 
 ![screen1](img/laborderseq.png)
 
@@ -35,7 +35,7 @@ The lab ordr workflow follows the OpenHIE specification for standard lab orderin
 |7,8| Send Order Update | IOL routes the updated FHIR R4 Tasks to the SHR and the EMR |
 |9| Update FHIR Task Status| FHIR task status updated locally|
 
-##Lab Results
+###Lab Results
 ![screen2](img/labresultsseq.png)
 
 
