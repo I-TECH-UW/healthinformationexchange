@@ -1,15 +1,46 @@
-# Lab Orders and Results exchange between OpenMRS and OpenELIS
+# Overview
+The Lab Order and Results workflow utilizes the [FHIR Workflow Module](https://www.hl7.org/fhir/workflow-module.html) and suggested [Communication Patterns](https://www.hl7.org/fhir/workflow-communications.html#12.6.2.1) to implement the ordering of lab tests from an EMR to an LIS and resulting from LIS to EMR.
 
-The Lab Order workflow between OpenELIS and [OpenMRS](http://openmrs.org) will use the [OpenMRS FHIR Workflow Module](https://www.hl7.org/fhir/workflow-module.html) and suggested [Communication Patterns](https://www.hl7.org/fhir/workflow-communications.html#12.6.2.1) to implement the ordering of lab tests from OpenMRS to OpenELIS and the returning the results to OpenMRS.
+# Implementing an EMR/LIS interoperability Exchange
 
-The current communication workflow uses HL7 V2.5.1 messages as documented here: (https://github.com/openelisglobal/openelisglobal-core/wiki/Result-Reporting). This functionality is implemented in [openmrs-module-labintegration](https://github.com/IsantePlus/openmrs-module-labintegration), an OpenMRS module made for an implementation of OpenMRS deployed in Haiti called [iSantePlus](https://github.com/IsantePlus).  
+In order to implement the exchange of laboratory results between an EMR and LIS, the following steps must be taken:
 
-##Communication Overview
-![screen1](img/omrsoe2.png)
+1. Identify all data to be exchanged 
+2. Decide upon a universally unique identification system for identifying lab tests
+3. Map lab tests to the unique ID system in both the EMR and LIS 
+4. Map all other relevant concepts between EMR and LIS, which can include (but not limited to):
+    - Patient Identifiers
+    - System/Facility Identifiers
+5. Identify the method for data exchange (push/pull) and for alerting of lab orders and results, taking into account systems availability
+6. Build out appropriate support for the workflow within the EMR and LIS
+7. Identify and develop mechanisms for handling:
+    - Canceled/Rejected lab orders
+    - Corrected Results
+    - Specialized results (e.g., Microbiology)
+
+# Communication Overview 
+## Lab Orders
+
+The lab ordr workflow follows the OpenHIE specification for standard lab ordering between an EMR and LIS. The workflow is detailed in the following sequence diagram:
+
+![screen1](img/laborderseq.png)
+
+| | Interaction | Data|
+|---| ------ | ----------- |
+|1| Create Lab Order  | Order Save generates a new FHIR Task Bundled Order by creating a Task FHIR R4 Task Resource with a reference to a Service Request with order information |
+|2| Send Lab Order | FHIR Task bundled order is sent to the IOL. Task status is aligned with the FHIR workflow communication pattern found [here](https://www.hl7.org/fhir/workflow-communications.html#12.6.2.1)|
+|3,4 | Send New Lab Order   | Bundled order is routed through the IOL to both the SHR and the LIS |
+|5 | Save Order and Update Order Status  | FHIR R4 Task Resource Status is updated locally to either `rejected` or `accepted`. A FHIR R4 ServiceRequest Resource (example) is created for order processing with a reference to the associated task. EMR test requests and LIS orders are matched based on LOINC codes.|
+|6| Send New Lab Order   | Bundled order is routed through the IOL to both the SHR and the LIS |
+|7,8| Send Order Update | IOL routes the updated FHIR R4 Tasks to the SHR and the EMR |
+|9| Update FHIR Task Status| FHIR task status updated locally|
+
+## Lab Results
+![screen2](img/labresultsseq.png)
 
 
-##Implementation Guide
-###iSantéPlus
+## Implementation Guide (OpenMRS/OpenELIS)
+### iSantéPlus
 1. Install iSantePlus using one of the following approaches:
 	
 	1. Docker: https://github.com/IsantePlus/isanteplus-docker
@@ -26,7 +57,7 @@ Start up the OpenELIS Update Task in `System Administration` → `Advanced Admin
 
 ![screen1](img/omrsoe1.png)
 
-###OpenELIS Global 2.x
+### OpenELIS Global 2.x
 1. Install OpenELIS Global 2.x using the instructions [HERE](../install)
 1. Navigate to the "results reporting" configuration: https://IPforyourserver:8443/OpenELIS-Global/ResultReportingConfiguration.do
 1. Move the radio button for Result Reporting to "Enable" and enter in the URL for the OpenMRS connection like in the example below. 
@@ -35,8 +66,8 @@ Start up the OpenELIS Update Task in `System Administration` → `Advanced Admin
 
 ![screen1](img/omrsoe3.png)
 
-##Required FHIR Resources
-###Task
+## Required FHIR Resources
+### Task
 > [more info](https://wiki.openmrs.org/display/projects/Task+Resource)
 
 The Task resource is created along with the corresponding ServiceRequest resource when a clinician creates a TestOrder and decides to send it to OpenELIS.
@@ -81,7 +112,7 @@ This resource is used to track the status of the lab order request from initiati
     }
 }
 ```
-###ServiceRequest
+### ServiceRequest
 > [more info](https://wiki.openmrs.org/display/projects/ServiceRequest+Resource)
 
 The ServiceRequest resource represents the TestOrder placed in OpenMRS. It is referenced from the Task with the Task.basedOn element, and sent to OpenELIS with the Task to initiate the processing of the order. 
@@ -118,7 +149,7 @@ The ServiceRequest resource represents the TestOrder placed in OpenMRS. It is re
     }
 }
 ```
-###DiagnosticReport
+### DiagnosticReport
 > [more info](https://wiki.openmrs.org/display/projects/DiagnosticReport+Resource)
 
 The DiagnosticReport resource  is the container for the results of an Order, and holds these results in the DiagnosticReport.result element as references to Observation resources. 
@@ -170,7 +201,7 @@ The DiagnosticReport resource  is the container for the results of an Order, and
   ]
 }
 ```
-###Observation
+### Observation
 > [more info](https://wiki.openmrs.org/display/projects/Observation+Resource)
 
 The Observation resource contains the results of the Lab Order request.
@@ -217,7 +248,7 @@ The Observation resource contains the results of the Lab Order request.
   }
 }
 ```
-###Patient
+### Patient
 
 > [more info](https://wiki.openmrs.org/display/projects/Patient+Resource)
 
@@ -273,7 +304,7 @@ Example Patient:
 
 ```
 
-##Relevant FHIR Docs
+## Relevant FHIR Docs
 * [Using Tasks in a RESTful Context](https://www.hl7.org/fhir/task.html#12.1.2.1)
 * [Workflow Module](https://www.hl7.org/fhir/workflow-module.html)
 * [Diagnostic Module](https://www.hl7.org/fhir/diagnostics-module.html)
