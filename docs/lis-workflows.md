@@ -26,11 +26,22 @@ Working with stakeholders, key partners, and system users, your team will need t
 A common terminology is critical for systems to identify content within the messages sent to and received by each other.  Many EMR and LIS systems have not been built using the same terminology for the laboratory orders and results, and therefore, must be mapped to an agreed upon common terminology for that exchange.  To do this, your team will need to work with stakeholders and key partners to either create a local set of shared terminology that uses unique IDs for each term, or your team can utilize an international standard coding system to create this shared terminology set.  We recommend using the LOINC international standard for that shared terminology set of orders and results needed for your context.
 
 **Resources** 
-[LOINC specification](https://loinc.org/)
+- [LOINC specification](https://loinc.org/)
 
 ###Extract or create a laboratory test catalog from both the EMR and LIS.
 
 In a spreadsheet or similar tool, create a line listing of the laboratory tests (and panels if used) from the EMR and from the LIS.  This test catalog will be used to map between the systems in step 4. 
+
+###Crosswalk the listing of lab tests between the EMR and LIS to map those lab tests to the unique ID system (coding)
+
+###Map all other relevant concepts and identifiers needed between EMR and LIS
+
+###Identify the data exchange method between the systems based on your HIE and infrastructure context
+
+###Build out the technological approach for the workflow within and between the EMR and LIS
+
+###Identify and develop mechanisms for handling potential issues and caveats
+
 
 ##Communication Overview 
 ###Lab Orders
@@ -51,7 +62,6 @@ The lab order workflow follows the OpenHIE specification for standard lab orderi
 
 ###Lab Results
 ![screen2](img/labresultsseq.png)
-
 
 ##Implementation Guide (OpenMRS/OpenELIS)
 ###iSantéPlus
