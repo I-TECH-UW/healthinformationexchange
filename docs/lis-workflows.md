@@ -1,22 +1,36 @@
 # Overview
-The Lab Order and Results workflow utilizes the [FHIR Workflow Module](https://www.hl7.org/fhir/workflow-module.html) and suggested [Communication Patterns](https://www.hl7.org/fhir/workflow-communications.html#12.6.2.1) to implement the ordering of lab tests from an EMR to an LIS and resulting from LIS to EMR.
+
+A critical workflow for high quality care is the timely and accurate exchange of laboratory orders and test results between the clinic and laboratories.  To digitize this workflow, you need an electronic medical record (EMR) capable of capturing orders, and a laboratory information system (LIS/LIMS) capable of order entry and capturing of test results associated with that order.  Using the most recent informatics standards, this digitized Lab Order and Results workflow SOP focuses on the use of FHIR and the OpenHIE architectural pattern for implementation, and includes several implementation approaches depending on context (i.e. direct bridge, older messaging standards only in the local systems).  This Lab Order and Results workflow utilizes the [FHIR Workflow Module](https://www.hl7.org/fhir/workflow-module.html) and suggested [Communication Patterns](https://www.hl7.org/fhir/workflow-communications.html#12.6.2.1) to implement the ordering of lab tests from an EMR to an LIS and resulting from LIS to EMR.
 
 ##Getting Started
 
-In order to implement the exchange of laboratory results between an EMR and LIS, the following steps must be taken:
+To get started in implementing the EMR-LIS workflow between electronic systems, it is best to understand the full scope of high level steps that will possibly need to be done, depending on your situation in the environment you are implementing in.  In general, these high-level steps may need to be taken.  Details about each of these steps and the possible caveats will follow.
 
-1. Identify all data to be exchanged 
-2. Decide upon a universally unique identification system for identifying lab tests
-3. Map lab tests to the unique ID system in both the EMR and LIS 
-4. Map all other relevant concepts between EMR and LIS, which can include (but not limited to):
-    - Patient Identifiers
-    - System/Facility Identifiers
-5. Identify the method for data exchange (push/pull) and for alerting of lab orders and results, taking into account systems availability
-6. Build out appropriate support for the workflow within the EMR and LIS
-7. Identify and develop mechanisms for handling:
-    - Canceled/Rejected lab orders
-    - Corrected Results
-    - Specialized results (e.g., Microbiology)
+1. Identify the minimum data set to be exchanged between the systems.
+2. Use a universally unique identification system (coding) for identifying and mapping lab tests for both systems.
+Extract or create a laboratory test catalog from both the EMR and LIS.
+3. Crosswalk the listing of lab tests between the EMR and LIS to map those lab tests to the unique ID system (coding).
+4. Map all other relevant concepts and identifiers needed between EMR and LIS
+5. Identify the data exchange method between the systems based on your HIE and infrastructure context. 
+6. Build out the technological approach for the workflow within and between the EMR and LIS.
+7. Identify and develop mechanisms for handling potential issues and caveats.
+
+##Step by Step
+###Identify minimum dataset
+Working with stakeholders, key partners, and system users, your team will need to identify the minimum data set to be exchanged between the systems.  Resources to inform the minimum data set could be paper forms that are used by providers for clinical orders, lab order and test result forms used by the laboratory, data sets from the EMR and LIS, and input from relevant technical working groups/steering committees, clinical partners and laboratory partners, and system users.  It is critical that the technical stewards / teams of the systems participate in this definition of the minimum data set to help determine what data is available in the systems, identify gaps in data or system abilities in capturing/providing that data, and feasibility in the system utilizing that data from the other system.
+
+**Resources**
+
+###Use a universally unique identification system (coding) for identifying and mapping lab tests for both systems.
+
+A common terminology is critical for systems to identify content within the messages sent to and received by each other.  Many EMR and LIS systems have not been built using the same terminology for the laboratory orders and results, and therefore, must be mapped to an agreed upon common terminology for that exchange.  To do this, your team will need to work with stakeholders and key partners to either create a local set of shared terminology that uses unique IDs for each term, or your team can utilize an international standard coding system to create this shared terminology set.  We recommend using the LOINC international standard for that shared terminology set of orders and results needed for your context.
+
+**Resources** 
+[LOINC specification](https://loinc.org/)
+
+###Extract or create a laboratory test catalog from both the EMR and LIS.
+
+In a spreadsheet or similar tool, create a line listing of the laboratory tests (and panels if used) from the EMR and from the LIS.  This test catalog will be used to map between the systems in step 4. 
 
 ##Communication Overview 
 ###Lab Orders
