@@ -1,7 +1,7 @@
-# Overview
+#Overview
 The Lab Order and Results workflow utilizes the [FHIR Workflow Module](https://www.hl7.org/fhir/workflow-module.html) and suggested [Communication Patterns](https://www.hl7.org/fhir/workflow-communications.html#12.6.2.1) to implement the ordering of lab tests from an EMR to an LIS and resulting from LIS to EMR.
 
-# Implementing an EMR/LIS interoperability Exchange
+#Implementing an EMR/LIS interoperability Exchange
 
 In order to implement the exchange of laboratory results between an EMR and LIS, the following steps must be taken:
 
@@ -18,8 +18,8 @@ In order to implement the exchange of laboratory results between an EMR and LIS,
     - Corrected Results
     - Specialized results (e.g., Microbiology)
 
-# Communication Overview 
-## Lab Orders
+#Communication Overview 
+##Lab Orders
 
 The lab ordr workflow follows the OpenHIE specification for standard lab ordering between an EMR and LIS. The workflow is detailed in the following sequence diagram:
 
@@ -35,12 +35,12 @@ The lab ordr workflow follows the OpenHIE specification for standard lab orderin
 |7,8| Send Order Update | IOL routes the updated FHIR R4 Tasks to the SHR and the EMR |
 |9| Update FHIR Task Status| FHIR task status updated locally|
 
-## Lab Results
+##Lab Results
 ![screen2](img/labresultsseq.png)
 
 
-## Implementation Guide (OpenMRS/OpenELIS)
-### iSantéPlus
+##Implementation Guide (OpenMRS/OpenELIS)
+###iSantéPlus
 1. Install iSantePlus using one of the following approaches:
 	
 	1. Docker: https://github.com/IsantePlus/isanteplus-docker
@@ -57,7 +57,7 @@ Start up the OpenELIS Update Task in `System Administration` → `Advanced Admin
 
 ![screen1](img/omrsoe1.png)
 
-### OpenELIS Global 2.x
+###OpenELIS Global 2.x
 1. Install OpenELIS Global 2.x using the instructions [HERE](../install)
 1. Navigate to the "results reporting" configuration: https://IPforyourserver:8443/OpenELIS-Global/ResultReportingConfiguration.do
 1. Move the radio button for Result Reporting to "Enable" and enter in the URL for the OpenMRS connection like in the example below. 
@@ -66,8 +66,8 @@ Start up the OpenELIS Update Task in `System Administration` → `Advanced Admin
 
 ![screen1](img/omrsoe3.png)
 
-## Required FHIR Resources
-### Task
+##Required FHIR Resources
+###Task
 > [more info](https://wiki.openmrs.org/display/projects/Task+Resource)
 
 The Task resource is created along with the corresponding ServiceRequest resource when a clinician creates a TestOrder and decides to send it to OpenELIS.
@@ -112,7 +112,7 @@ This resource is used to track the status of the lab order request from initiati
     }
 }
 ```
-### ServiceRequest
+###ServiceRequest
 > [more info](https://wiki.openmrs.org/display/projects/ServiceRequest+Resource)
 
 The ServiceRequest resource represents the TestOrder placed in OpenMRS. It is referenced from the Task with the Task.basedOn element, and sent to OpenELIS with the Task to initiate the processing of the order. 
@@ -149,7 +149,7 @@ The ServiceRequest resource represents the TestOrder placed in OpenMRS. It is re
     }
 }
 ```
-### DiagnosticReport
+###DiagnosticReport
 > [more info](https://wiki.openmrs.org/display/projects/DiagnosticReport+Resource)
 
 The DiagnosticReport resource  is the container for the results of an Order, and holds these results in the DiagnosticReport.result element as references to Observation resources. 
@@ -201,7 +201,7 @@ The DiagnosticReport resource  is the container for the results of an Order, and
   ]
 }
 ```
-### Observation
+###Observation
 > [more info](https://wiki.openmrs.org/display/projects/Observation+Resource)
 
 The Observation resource contains the results of the Lab Order request.
@@ -248,7 +248,7 @@ The Observation resource contains the results of the Lab Order request.
   }
 }
 ```
-### Patient
+###Patient
 
 > [more info](https://wiki.openmrs.org/display/projects/Patient+Resource)
 
@@ -304,14 +304,14 @@ Example Patient:
 
 ```
 
-## Relevant FHIR Docs
+##Relevant FHIR Docs
 * [Using Tasks in a RESTful Context](https://www.hl7.org/fhir/task.html#12.1.2.1)
 * [Workflow Module](https://www.hl7.org/fhir/workflow-module.html)
 * [Diagnostic Module](https://www.hl7.org/fhir/diagnostics-module.html)
 * [Example: Workflow states for a lab order for a blood test](https://www.hl7.org/fhir/workflow-communications.html#12.6.2.1)
 * [Option G: POST of Task to fulfiller's system](https://www.hl7.org/fhir/workflow-management.html#optiong)
 
-## Relevant OpenMRS Talk Posts
+##Relevant OpenMRS Talk Posts
 [The handling and mapping of lab order status for the lab workflow](https://talk.openmrs.org/t/the-handling-and-mapping-of-lab-order-status-for-the-lab-workflow/26348)
 
 
