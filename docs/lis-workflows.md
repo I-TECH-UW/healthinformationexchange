@@ -16,31 +16,31 @@ Extract or create a laboratory test catalog from both the EMR and LIS.
 7. Identify and develop mechanisms for handling potential issues and caveats.
 
 ##Step by Step
-###Identify minimum dataset
+###(1)Identify minimum dataset
 Working with stakeholders, key partners, and system users, your team will need to identify the minimum data set to be exchanged between the systems.  Resources to inform the minimum data set could be paper forms that are used by providers for clinical orders, lab order and test result forms used by the laboratory, data sets from the EMR and LIS, and input from relevant technical working groups/steering committees, clinical partners and laboratory partners, and system users.  It is critical that the technical stewards / teams of the systems participate in this definition of the minimum data set to help determine what data is available in the systems, identify gaps in data or system abilities in capturing/providing that data, and feasibility in the system utilizing that data from the other system.
 
 **Resources**
 
-###Use a universally unique identification system (coding) for identifying and mapping lab tests for both systems.
+###(2)Use a universally unique identification system (coding) for identifying and mapping lab tests for both systems.
 
 A common terminology is critical for systems to identify content within the messages sent to and received by each other.  Many EMR and LIS systems have not been built using the same terminology for the laboratory orders and results, and therefore, must be mapped to an agreed upon common terminology for that exchange.  To do this, your team will need to work with stakeholders and key partners to either create a local set of shared terminology that uses unique IDs for each term, or your team can utilize an international standard coding system to create this shared terminology set.  We recommend using the LOINC international standard for that shared terminology set of orders and results needed for your context.
 
 **Resources** 
 - [LOINC specification](https://loinc.org/)
 
-###Extract or create a laboratory test catalog from both the EMR and LIS.
+###(3)Extract or create a laboratory test catalog from both the EMR and LIS.
 
 In a spreadsheet or similar tool, create a line listing of the laboratory tests (and panels if used) from the EMR and from the LIS.  This test catalog will be used to map between the systems in step 4. 
 
-###Crosswalk the listing of lab tests between the EMR and LIS to map those lab tests to the unique ID system (coding)
+###(4)Crosswalk the listing of lab tests between the EMR and LIS to map those lab tests to the unique ID system (coding)
 
-###Map all other relevant concepts and identifiers needed between EMR and LIS
+###(5)Map all other relevant concepts and identifiers needed between EMR and LIS
 
-###Identify the data exchange method between the systems based on your HIE and infrastructure context
+###(6)Identify the data exchange method between the systems based on your HIE and infrastructure context
 
-###Build out the technological approach for the workflow within and between the EMR and LIS
+###(7)Build out the technological approach for the workflow within and between the EMR and LIS
 
-###Identify and develop mechanisms for handling potential issues and caveats
+###(8)Identify and develop mechanisms for handling potential issues and caveats
 
 
 ##Communication Overview 
