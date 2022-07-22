@@ -8,12 +8,13 @@ To get started in implementing the EMR-LIS workflow between electronic systems, 
 
 1. Identify the minimum data set to be exchanged between the systems.
 2. Use a universally unique identification system (coding) for identifying and mapping lab tests for both systems.
-Extract or create a laboratory test catalog from both the EMR and LIS.
-3. Crosswalk the listing of lab tests between the EMR and LIS to map those lab tests to the unique ID system (coding).
-4. Map all other relevant concepts and identifiers needed between EMR and LIS
-5. Identify the data exchange method between the systems based on your HIE and infrastructure context. 
-6. Build out the technological approach for the workflow within and between the EMR and LIS.
-7. Identify and develop mechanisms for handling potential issues and caveats.
+3. Extract or create a laboratory test catalog from both the EMR and LIS.
+4. Crosswalk the listing of lab tests between the EMR and LIS to map those lab tests to the unique ID system (coding).
+5. Map all other relevant concepts and identifiers needed between EMR and LIS
+6. Identify the data exchange method between the systems based on your HIE and infrastructure context. 
+7. Build out the technological approach for the workflow within and between the EMR and LIS.
+8. Identify and develop mechanisms for handling potential issues and caveats.
+
 
 ##Step by Step
 ###(1)Identify minimum dataset
@@ -32,16 +33,55 @@ A common terminology is critical for systems to identify content within the mess
 
 In a spreadsheet or similar tool, create a line listing of the laboratory tests (and panels if used) from the EMR and from the LIS.  This test catalog will be used to map between the systems in step 4. 
 
+**Resources**
+- [Example: Haiti OpenELIS Lab System Test Catalog](https://docs.google.com/spreadsheets/d/1y9q42jMB2dTOClxJP3NU0UJ7xnX1qh_kCjlcNqBL49E/edit#gid=0)
+
 ###(4)Crosswalk the listing of lab tests between the EMR and LIS to map those lab tests to the unique ID system (coding)
+
+In step #2, your team identified the shared terminology set that would stand as the source of truth for all terminologies that are exchanged in your HIE and provide unique identifiers for that terminology.  Using your laboratory test catalogs created in step #3, you will need to now map your lab tests and results from both the EMR and the LIS to the shared terminology set.  We recommend the use of LOINC codes as the mapping identifier.
+
+Problem Solving: In some cases, the EMR may allow ordering tests by panel.  If the order only provides the panel and does not include individual tests, you will need to map panels to individual tests for the order and develop an additional mechanism to handle the translation for the proper exchange to the LIS.
+
+**Resources**
+- [Example: Botswana EMR-LIS Terminology Mapping](https://docs.google.com/spreadsheets/d/1jatq2MpMQPIrZvwCKeij6VEiNdPXaRcTTElJJG29dsM/edit#gid=0)
+- [Example: Haiti iSantePlus Terminology Mapping to LOINC](https://docs.google.com/spreadsheets/d/1NgFUvbsDldy3N-xvsXntBMQ6CC1FCtqvchwpAjnzAkA/edit#gid=0)
+
 
 ###(5)Map all other relevant concepts and identifiers needed between EMR and LIS
 
+Many times in systems that are not based on standards, the technical architectural decisions means the requirements for data fields may be different than the requirements in other systems for those data elements.  In these cases, when messages are exchanged between systems, those data elements that fit the requirements for the sending system do not meet the requirements for that data in the receiving system and will cause an error, and ultimately the transaction fails and the message and its data is not accepted into the receiving system.  To minimize errors of this type, ensure there is mapping of  all other relevant concepts between EMR and LIS.  Some of the most common concepts/data that might have issues do to requirements and algorithms tied to that data include (but are not limited to):
+- Patient Identifiers
+- Facility Identifiers
+- System Identifiers
+
+*Problem Solving: Many times the EMR and LIS have different required formats, lengths, or algorithms for identifiers that can cause errors and mismatches when messaging between systems.  There may be negotiating and workarounds that will need to be discussed and a mechanism for handling developed.  An example of this was in the Haiti iSantePlus (OpenMRS) exchange with a proprietary lab system that had specific algorithms attached to the patient identifiers fields in their database that caused a mismatch with the data sent.  In addition, there were other data elements that needed “massaging” due to character limits that don’t accommodate the full length of the data sent.  These types of issues needed extensive negotiation and custom development of how the data in the message would be constructed, formatted, and consumed in order to reliably exchange data between these systems.*
+
+
 ###(6)Identify the data exchange method between the systems based on your HIE and infrastructure context
+
+There are multiple ways to approach the exchange of data, and will be decided by understanding the context in which your exchange will operate, and the requirements for data availability from the exchange.  You will use either a push of data from a system, or a pull of data from a system, or a mixed method approach depending on the implementation, system availability and connectivity, components available in the HIE, and requirements for timeliness and data availability from the exchange.  For example, you can set up your exchange of orders to use any of the following approaches:
+- Push data from EMR to central repository (i.e. SHR), the central repository alerts the LIS, and subsequently the data is pulled by the LIS
+- The LIS can periodically check for data to be pulled from an EMR or a central repository system (i.e. SHR), conducting the pull with all data with an order status of `ordered`
+- An order is pushed by an EMR automatically to the LIS.  In this case, there is no way to know if the order reached the LIS or not.  We do not recommend this approach when using FHIR due to the lack of any receipt acknowledge messaging in the FHIR workflow standard.
 
 ###(7)Build out the technological approach for the workflow within and between the EMR and LIS
 
+Use the technical artifacts in the Implementation Guide and the detailed technical sections in this SOP to develop and configure the EMR and LIS exchange.  Every EMR-LIS exchange is somewhat unique, and will require customization of these artifacts and approaches to meet the needs of the context you are working in.  For additional support during your build phase, engage with other developers and implementers in the relevant global goods communities of practice, such as OpenHIE LIS COP, OpenMRS FHIR Squad, and LIS software forums (i.e. OpenELIS).  Many folks are eager to share their experience and provide answers for how to use these technical artifacts and tools to achieve this exchange.  In addition, our team is happy to answer questions you may have when setting up your exchange following this guide.
+
+**Resources**
+- [OpenMRS FHIR Squad](https://wiki.openmrs.org/display/projects/OpenMRS+HL7+FHIR+Solutions), [FHIR Squad Bi-Weekly Calls](https://wiki.openmrs.org/display/projects/FHIR+Squad+Notes), and [Talk FHIR Forum](https://talk.openmrs.org/c/projects/fhir/52)
+[OpenHIE LIS COP](https://wiki.ohie.org/pages/viewpage.action?pageId=36536662) and [Slack](https://ohieliscop.slack.com/)
+[OpenELIS Forum](https://talk.openelisci.org/)
+
+
 ###(8)Identify and develop mechanisms for handling potential issues and caveats
 
+Exchanges between EMR and LIS are not an easy thing to accomplish due to the many nuances to the workflows and the data collected and exchanged in the process.  Your team will need to identify additional potential issues for the exchange specific to the workflows you are addressing, and develop mechanisms to handle those.  Other problem areas to look for are, but no limited to:
+- Canceled and Rejected lab orders
+- Corrected Results after report out
+- Specialized and interim/intermediate results (e.g., Microbiology)
+- Ordering of test panels rather than individual lab tests
+- Intermittent connectivity and infrastructure issues
 
 ##Communication Overview 
 ###Lab Orders
