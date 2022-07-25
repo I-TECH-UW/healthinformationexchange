@@ -1,8 +1,16 @@
 site_name: EMR and LIS Data Exchange Knowledge Base
+site_url: ""
+use_directory_urls: false
 nav:
-    - Home: index.md
-    - About: about.md
-    - Configure OpenMRS and OpenELIS Interoperability: deployomrs.md
-    - OpenELIS Website: http://openelis-global.org
-    - OpenMRS Website: https://openmrs.org
+    - Home: 'index.md'
+    - About: 'about.md'
+    - HIE Workflows:
+        - Overview: 'hie-workflows.md'
+        - LIS Workflows: 'lis-workflows.md'
+        - MPI Workflows: 'mpi-workflows.md'
+    - Support:
+        - FAQ: faq.md
+        - Get Additional Help: get-additional-help.md
 theme: readthedocs
+extra_css:
+    - css/extra.css
