@@ -103,7 +103,7 @@ The lab order workflow follows the OpenHIE specification for standard lab orderi
 ###Lab Results
 ![screen2](img/labresultsseq.png)
 
-##Implementation Guide (OpenMRS/OpenELIS)
+##Case Study of OpenMRS and OpenELIS exchange
 ###iSantéPlus
 1. Install iSantePlus using one of the following approaches:
 	
