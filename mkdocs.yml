@@ -12,3 +12,5 @@ nav:
         - FAQ: faq.md
         - Get Additional Help: get-additional-help.md
 theme: readthedocs
+extra_css:
+    - css/extra.css
