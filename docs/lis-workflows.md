@@ -105,7 +105,6 @@ The lab order workflow follows the OpenHIE specification for standard lab orderi
 
 | | Interaction | Data| Transaction Options |
 |---| ------ | ----------- | ----------- |
-
 |1| Results Saved and FHIR Task Updated | The results save generates a FHIR R4 DiagnosticReport Resource () with referenced FHIR R4 Observation resources () to store the results,  and a reference to the associated Patient and Task Resource. ||
 |2| Search for Updated FHIR Tasks || FHIR R4 Search for Tasks based on tasks for which the owner is the EMR, and which have a status ‘completed’ |
 |3| Return FHIR Updated Tasks | FHIR R4 Task Resource with status ‘completed’ and reference to FHIR R4 DiagnosticReport | FHIR R4 bundle search response () |
