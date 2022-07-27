@@ -90,8 +90,8 @@ The lab order workflow follows the OpenHIE specification for standard lab orderi
 
 ![screen1](img/laborderseq.png)
 
-| | Interaction | Data|
-|---| ------ | ----------- |
+| | Interaction | Data| Transaction Options |
+|---| ------ | ----------- | ----------- |
 |1| Create Lab Order  | Order Save generates a new FHIR Task Bundled Order by creating a Task FHIR R4 Task Resource with a reference to a Service Request with order information |
 |2| Send Lab Order | FHIR Task bundled order is sent to the IOL. Task status is aligned with the FHIR workflow communication pattern found [here](https://www.hl7.org/fhir/workflow-communications.html#12.6.2.1)|
 |3,4 | Send New Lab Order   | Bundled order is routed through the IOL to both the SHR and the LIS |
@@ -102,6 +102,16 @@ The lab order workflow follows the OpenHIE specification for standard lab orderi
 
 ###Lab Results
 ![screen2](img/labresultsseq.png)
+
+| | Interaction | Data| Transaction Options |
+|---| ------ | ----------- | ----------- |
+
+|1| Results Saved and FHIR Task Updated | The results save generates a FHIR R4 DiagnosticReport Resource () with referenced FHIR R4 Observation resources () to store the results,  and a reference to the associated Patient and Task Resource. ||
+|2| Search for Updated FHIR Tasks || FHIR R4 Search for Tasks based on tasks for which the owner is the EMR, and which have a status ‘completed’ |
+|3| Return FHIR Updated Tasks | FHIR R4 Task Resource with status ‘completed’ and reference to FHIR R4 DiagnosticReport | FHIR R4 bundle search response () |
+|4| Search for Associated Diagnostic Reports || FHIR R4 Search for DiagnosticReports by UUID |
+|5| Return Associated Diagnostic Reports | FHIR R4 DiagnosticReport Resource with ||
+|6| Update FHIR Task Status, Store DiagnosticReports and Save Results ||||
 
 ##Case Study of OpenMRS and OpenELIS exchange
 ###iSantéPlus
