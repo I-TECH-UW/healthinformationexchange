@@ -178,7 +178,7 @@ NB. The Patient Must have an active vist
  ![screen1](img/omrsoe1.png)
 
 1. To View The results ,Go to `Laboratory History` on the Patient DashBoard under General Actions.     
-`Find Patient` → `Patient DashBord` → `Laboratory History` → `Laboratory Analysis`
+`Find Patient` → `Patient DashBord` → `Laboratory History`
 ![screen1](img/dashbordLabHistory.png)
 ![screen1](img/labHistory.png)
 
