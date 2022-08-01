@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Lab Orders and Results exchange between OpenMRS and OpenELIS - EMR and LIS Data Exchange Knowledge Base</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  <link href="css/extra.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Lab Orders and Results exchange between OpenMRS and OpenELIS";
+    var mkdocs_page_input_path = "deployomrs.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="icon icon-home"> EMR and LIS Data Exchange Knowledge Base</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="index.html">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="about.html">About</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">HIE Workflows</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="hie-workflows.html">Overview</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="lis-workflows.html">LIS Workflows</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="mpi-workflows.html">MPI Workflows</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Support</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="get-additional-help.html">Get Additional Help</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">EMR and LIS Data Exchange Knowledge Base</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Lab Orders and Results exchange between OpenMRS and OpenELIS</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="lab-orders-and-results-exchange-between-openmrs-and-openelis">Lab Orders and Results exchange between OpenMRS and OpenELIS</h1>
+<p>The Lab Order workflow between OpenELIS and <a href="http://openmrs.org">OpenMRS</a> will use the <a href="https://www.hl7.org/fhir/workflow-module.html">OpenMRS FHIR Workflow Module</a> and suggested <a href="https://www.hl7.org/fhir/workflow-communications.html#12.6.2.1">Communication Patterns</a> to implement the ordering of lab tests from OpenMRS to OpenELIS and the returning the results to OpenMRS.</p>
+<p>The current communication workflow uses HL7 V2.5.1 messages as documented here: (https://github.com/openelisglobal/openelisglobal-core/wiki/Result-Reporting). This functionality is implemented in <a href="https://github.com/IsantePlus/openmrs-module-labintegration">openmrs-module-labintegration</a>, an OpenMRS module made for an implementation of OpenMRS deployed in Haiti called <a href="https://github.com/IsantePlus">iSantePlus</a>.  </p>
+<h2 id="communication-overview">Communication Overview</h2>
+<p><img alt="screen1" src="img/omrsoe2.png" /></p>
+<h2 id="implementation-guide">Implementation Guide</h2>
+<h3 id="isanteplus">iSantéPlus</h3>
+<ol>
+<li>
+<p>Install iSantePlus using one of the following approaches:</p>
+<ol>
+<li>
+<p>Docker: https://github.com/IsantePlus/isanteplus-docker</p>
+</li>
+<li>
+<p>Apache Tomcat WAR: <a href="https://wiki.openmrs.org/download/attachments/235274282/SOP%20iSantePlus%20Installation.docx?version=1&amp;modificationDate=1590637509000&amp;api=v2">SOP iSantePlus Installation.docx</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://wiki.openmrs.org/display/docs/Administering+Modules">Install</a> the <a href="https://github.com/pmanko/openmrs-module-isanteplus-labonfhir">OpenMRS FHIR module</a> using the following omod file: <a href="https://drive.google.com/file/d/1SSlVrChKQ6i0zVbUgzR7Blx_czjiJhcG/view?usp=sharing">openmrs-module-fhir2.omod</a></p>
+</li>
+<li>
+<p>Install the iSantePlus Lab on FHIR module using the following omod file: labonfhir-1.0.0-SNAPSHOT.omod</p>
+</li>
+<li>
+<p>Restart iSantePlus</p>
+</li>
+</ol>
+<p>Start up the OpenELIS Update Task in <code>System Administration</code> → <code>Advanced Administration</code> → <code>Scheduler</code> → <code>Manage Scheduler</code></p>
+<p><img alt="screen1" src="img/omrsoe1.png" /></p>
+<h3 id="openelis-global-2x">OpenELIS Global 2.x</h3>
+<ol>
+<li>Install OpenELIS Global 2.x using the instructions <a href="../install">HERE</a></li>
+<li>Navigate to the "results reporting" configuration: https://IPforyourserver:8443/OpenELIS-Global/ResultReportingConfiguration.do</li>
+<li>Move the radio button for Result Reporting to "Enable" and enter in the URL for the OpenMRS connection like in the example below. <ul>
+<li>Please note, the Test URL button may not respond to the FHIR module, so please disregard any errors if you click it.  </li>
+</ul>
+</li>
+<li>Click Save at the bottom of the page. </li>
+</ol>
+<p><img alt="screen1" src="img/omrsoe3.png" /></p>
+<h2 id="required-fhir-resources">Required FHIR Resources</h2>
+<h3 id="task">Task</h3>
+<blockquote>
+<p><a href="https://wiki.openmrs.org/display/projects/Task+Resource">more info</a></p>
+</blockquote>
+<p>The Task resource is created along with the corresponding ServiceRequest resource when a clinician creates a TestOrder and decides to send it to OpenELIS.</p>
+<p>This resource is used to track the status of the lab order request from initiation to completion, and as a container for all other resources related to the given order.</p>
+<p><em>Example Task:</em></p>
+<pre><code>{
+    &quot;resourceType&quot;: &quot;Task&quot;,
+    &quot;id&quot;: &quot;88ffa7fb-0419-4097-8b45-24f0d843c5ea&quot;,
+    &quot;identifier&quot;: [
+        {
+            &quot;system&quot;: &quot;http://isanteplus.org/ext/task/identifier&quot;,
+            &quot;value&quot;: &quot;88ffa7fb-0419-4097-8b45-24f0d843c5ea&quot;
+        }
+    ],
+    &quot;basedOn&quot;: [
+        {
+            &quot;reference&quot;: &quot;ServiceRequest/ebf83ba0-9d3c-497f-9aa0-d839ec506202&quot;,
+            &quot;type&quot;: &quot;ServiceRequest&quot;
+        },
+        {
+            &quot;reference&quot;: &quot;ServiceRequest/73e96ecb-a78d-41c8-a55f-d9b90f759e5f&quot;,
+            &quot;type&quot;: &quot;ServiceRequest&quot;
+        }
+    ],
+    &quot;status&quot;: &quot;requested&quot;,
+    &quot;intent&quot;: &quot;order&quot;,
+    &quot;for&quot;: {
+        &quot;reference&quot;: &quot;Patient/e14e9bda-d273-4c74-8509-5732a4ebaf19&quot;,
+        &quot;type&quot;: &quot;Patient&quot;
+    },
+    &quot;encounter&quot;: {
+        &quot;reference&quot;: &quot;Encounter/7f5aabd9-6375-47c8-a8d6-30f219b6e2f1&quot;,
+        &quot;type&quot;: &quot;Encounter&quot;
+    },
+    &quot;authoredOn&quot;: &quot;2020-04-28T17:33:19+00:00&quot;,
+    &quot;owner&quot;: {
+        &quot;reference&quot;: &quot;Practitioner/f9badd80-ab76-11e2-9e96-0800200c9a66&quot;,
+        &quot;type&quot;: &quot;Practitioner&quot;
+    }
+}
+</code></pre>
+<h3 id="servicerequest">ServiceRequest</h3>
+<blockquote>
+<p><a href="https://wiki.openmrs.org/display/projects/ServiceRequest+Resource">more info</a></p>
+</blockquote>
+<p>The ServiceRequest resource represents the TestOrder placed in OpenMRS. It is referenced from the Task with the Task.basedOn element, and sent to OpenELIS with the Task to initiate the processing of the order. </p>
+<p><em>Example Service Request:</em></p>
+<pre><code>{
+    &quot;resourceType&quot;: &quot;ServiceRequest&quot;,
+    &quot;id&quot;: &quot;73e96ecb-a78d-41c8-a55f-d9b90f759e5f&quot;,
+    &quot;status&quot;: &quot;active&quot;,
+    &quot;intent&quot;: &quot;order&quot;,
+    &quot;code&quot;: {
+        &quot;coding&quot;: [
+            {
+                &quot;code&quot;: &quot;790AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;
+            },
+            {
+                &quot;system&quot;: &quot;http://loinc.org&quot;,
+                &quot;code&quot;: &quot;14682-9&quot;
+            },
+            {
+                &quot;system&quot;: &quot;urn:oid:2.16.840.1.113883.3.7201&quot;,
+                &quot;code&quot;: &quot;790&quot;
+            }
+        ]
+    },
+    &quot;subject&quot;: {
+        &quot;reference&quot;: &quot;Patient/e14e9bda-d273-4c74-8509-5732a4ebaf19&quot;,
+        &quot;type&quot;: &quot;Patient&quot;
+    },
+    &quot;encounter&quot;: {
+        &quot;reference&quot;: &quot;Encounter/7f5aabd9-6375-47c8-a8d6-30f219b6e2f1&quot;,
+        &quot;type&quot;: &quot;Encounter&quot;
+    }
+}
+</code></pre>
+<h3 id="diagnosticreport">DiagnosticReport</h3>
+<blockquote>
+<p><a href="https://wiki.openmrs.org/display/projects/DiagnosticReport+Resource">more info</a></p>
+</blockquote>
+<p>The DiagnosticReport resource  is the container for the results of an Order, and holds these results in the DiagnosticReport.result element as references to Observation resources. </p>
+<p><em>Example Diagnostic Report</em></p>
+<pre><code>{
+  &quot;resourceType&quot;: &quot;DiagnosticReport&quot;,
+  &quot;id&quot;: &quot;93&quot;,
+  &quot;meta&quot;: {
+    &quot;versionId&quot;: &quot;1&quot;,
+    &quot;lastUpdated&quot;: &quot;2020-04-28T17:33:36.163+00:00&quot;,
+    &quot;source&quot;: &quot;#55t4lpDZF4q3TCZ0&quot;
+  },
+  &quot;text&quot;: {
+    &quot;status&quot;: &quot;generated&quot;,
+    &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;div class=\&quot;hapiHeaderText\&quot;&gt; Untitled Diagnostic Report &lt;/div&gt;&lt;table class=\&quot;hapiPropertyTable\&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Status&lt;/td&gt;&lt;td&gt;FINAL&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+  },
+  &quot;identifier&quot;: [
+    {
+      &quot;system&quot;: &quot;https://isanteplusdemo.com/openmrs/ws/fhir2/&quot;,
+      &quot;value&quot;: &quot;ebf83ba0-9d3c-497f-9aa0-d839ec506202&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;code&quot;: {
+    &quot;coding&quot;: [
+      {
+        &quot;code&quot;: &quot;1008AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;
+      },
+      {
+        &quot;system&quot;: &quot;http://loinc.org&quot;,
+        &quot;code&quot;: &quot;22748-8&quot;
+      },
+      {
+        &quot;system&quot;: &quot;urn:oid:2.16.840.1.113883.3.7201&quot;,
+        &quot;code&quot;: &quot;1008&quot;
+      }
+    ]
+  },
+  &quot;subject&quot;: {
+    &quot;reference&quot;: &quot;Patient/2&quot;
+  },
+  &quot;result&quot;: [
+    {
+      &quot;reference&quot;: &quot;Observation/92&quot;,
+      &quot;type&quot;: &quot;Observation&quot;
+    }
+  ]
+}
+</code></pre>
+<h3 id="observation">Observation</h3>
+<blockquote>
+<p><a href="https://wiki.openmrs.org/display/projects/Observation+Resource">more info</a></p>
+</blockquote>
+<p>The Observation resource contains the results of the Lab Order request.</p>
+<p><em>Example Observation:</em></p>
+<pre><code>{
+  &quot;resourceType&quot;: &quot;Observation&quot;,
+  &quot;id&quot;: &quot;92&quot;,
+  &quot;meta&quot;: {
+    &quot;versionId&quot;: &quot;1&quot;,
+    &quot;lastUpdated&quot;: &quot;2020-04-28T17:33:36.124+00:00&quot;,
+    &quot;source&quot;: &quot;#xAVz0uUE6c3l42Za&quot;
+  },
+  &quot;identifier&quot;: [
+    {
+      &quot;system&quot;: &quot;https://isanteplusdemo.com/openmrs/ws/fhir2/&quot;,
+      &quot;value&quot;: &quot;ebf83ba0-9d3c-497f-9aa0-d839ec506202&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;code&quot;: {
+    &quot;coding&quot;: [
+      {
+        &quot;code&quot;: &quot;1008AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;
+      },
+      {
+        &quot;system&quot;: &quot;http://loinc.org&quot;,
+        &quot;code&quot;: &quot;22748-8&quot;
+      },
+      {
+        &quot;system&quot;: &quot;urn:oid:2.16.840.1.113883.3.7201&quot;,
+        &quot;code&quot;: &quot;1008&quot;
+      }
+    ]
+  },
+  &quot;subject&quot;: {
+    &quot;reference&quot;: &quot;Patient/2&quot;
+  },
+  &quot;valueQuantity&quot;: {
+    &quot;value&quot;: 55,
+    &quot;unit&quot;: &quot;UI/L&quot;
+  }
+}
+</code></pre>
+<h3 id="patient">Patient</h3>
+<blockquote>
+<p><a href="https://wiki.openmrs.org/display/projects/Patient+Resource">more info</a></p>
+</blockquote>
+<p>The Patient resource contains vital information for OpenELIS to fullfill the lab order request, and is referenced by the Task.</p>
+<p>Example Patient:</p>
+<pre><code>{
+    &quot;resourceType&quot;: &quot;Patient&quot;,
+    &quot;id&quot;: &quot;e14e9bda-d273-4c74-8509-5732a4ebaf19&quot;,
+    &quot;identifier&quot;: [
+        {
+            &quot;id&quot;: &quot;5981a256-d60c-44b1-beae-9bdd2cf572f8&quot;,
+            &quot;use&quot;: &quot;official&quot;,
+            &quot;system&quot;: &quot;iSantePlus ID&quot;,
+            &quot;value&quot;: &quot;10012R&quot;
+        },
+        {
+            &quot;id&quot;: &quot;75a67d54-6fff-44d1-9c3e-2116c967b475&quot;,
+            &quot;use&quot;: &quot;usual&quot;,
+            &quot;system&quot;: &quot;Code National&quot;,
+            &quot;value&quot;: &quot;100000&quot;
+        },
+        {
+            &quot;id&quot;: &quot;29447d21-3cd6-42a9-9ab2-79ebfa710a01&quot;,
+            &quot;use&quot;: &quot;usual&quot;,
+            &quot;system&quot;: &quot;ECID&quot;,
+            &quot;value&quot;: &quot;04d759e0-5d02-11e8-b899-0242ac12000b&quot;
+        }
+    ],
+    &quot;active&quot;: true,
+    &quot;name&quot;: [
+        {
+            &quot;id&quot;: &quot;511275de-e301-44a3-95d2-28d0d3b35387&quot;,
+            &quot;family&quot;: &quot;Mankowski&quot;,
+            &quot;given&quot;: [
+                &quot;Piotr&quot;
+            ]
+        }
+    ],
+    &quot;gender&quot;: &quot;male&quot;,
+    &quot;birthDate&quot;: &quot;1987-01-01&quot;,
+    &quot;deceasedBoolean&quot;: false,
+    &quot;address&quot;: [
+        {
+            &quot;id&quot;: &quot;d4f7c809-3d01-4032-b64d-4c22e8eccbbc&quot;,
+            &quot;use&quot;: &quot;home&quot;,
+            &quot;country&quot;: &quot;Haiti&quot;
+        }
+    ]
+}
+
+</code></pre>
+<h2 id="relevant-fhir-docs">Relevant FHIR Docs</h2>
+<ul>
+<li><a href="https://www.hl7.org/fhir/task.html#12.1.2.1">Using Tasks in a RESTful Context</a></li>
+<li><a href="https://www.hl7.org/fhir/workflow-module.html">Workflow Module</a></li>
+<li><a href="https://www.hl7.org/fhir/diagnostics-module.html">Diagnostic Module</a></li>
+<li><a href="https://www.hl7.org/fhir/workflow-communications.html#12.6.2.1">Example: Workflow states for a lab order for a blood test</a></li>
+<li><a href="https://www.hl7.org/fhir/workflow-management.html#optiong">Option G: POST of Task to fulfiller's system</a></li>
+</ul>
+<h2 id="relevant-openmrs-talk-posts">Relevant OpenMRS Talk Posts</h2>
+<p><a href="https://talk.openmrs.org/t/the-handling-and-mapping-of-lab-order-status-for-the-lab-workflow/26348">The handling and mapping of lab order status for the lab workflow</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme_extra.js" defer></script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
