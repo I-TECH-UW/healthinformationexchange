@@ -1,0 +1,52 @@
+@startuml
+title "HIE-based\nSetup" 
+
+rectangle " " as emrs {
+actor "EMR User" as emrUser1
+actor "EMR User" as emrUser2
+actor "EMR User" as emrUser3
+node "EMR" as emr1
+node "EMR" as emr2
+node "EMR" as emr3
+
+}
+
+emrUser1-[hidden]d->emrUser2
+emrUser2-[hidden]d->emrUser3
+emr1-[hidden]d->emr2
+emr2-[hidden]d->emr3
+emrUser1<->emr1
+emrUser2<->emr2
+emrUser3<->emr3
+
+cloud "HIE" as hie {
+  component "Interoperability Layer" as openhim
+  component "Central Lab\nRepository" as shr {
+    artifact "Consolidated\nLab Record"
+    database "FHIR\nServer"
+  }
+}
+
+emrs<-r->openhim
+
+rectangle " " as liss {
+  node "LIS" as lis1
+  node "LIS" as lis2
+  node "LIS" as lis3
+
+  actor "Lab User" as labUser1
+  actor "Lab User" as labUser2
+  actor "Lab User" as labUser3
+}
+
+labUser1-[hidden]d->labUser2
+labUser2-[hidden]d->labUser3
+lis1-[hidden]d->lis2
+lis2-[hidden]d->lis3
+lis1<->labUser1
+lis2<->labUser2
+lis3<->labUser3
+
+openhim<-do->shr
+openhim<-r->liss
+@enduml

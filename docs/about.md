@@ -1,1 +1,3 @@
-This will serve as a document repo
+# About Our Team
+
+The [Digital Initiatives Group **(DIGI)**](go2itech.org/digital-initiatives-group-at-i-tech/about-digi/) is a global health informatics center housed within the [I-TECH organization](https://www.go2itech.org/) at the University of Washington. Our team specializes in health information exchange, and specifically laboratory informatics and exchanges, in resource constrained environments. We work at the informatics domain level, developing global goods and publishing internationally accepted informatics standards; and support the countries and implementers applying those in national health programs across the globe. We are collaborators at heart, so please join us in innovating on improvements to the work and the documentation here. For more information about our team and portfolio, please click here to visit our [UW I-TECH DIGI page](https://www.go2itech.org/digital-initiatives-group-at-i-tech/about-digi/)
