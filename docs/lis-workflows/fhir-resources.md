@@ -236,12 +236,13 @@ Example Patient:
 ```
 #### Useful Links
 
-**Relevant FHIR Docs**
-* [Using Tasks in a RESTful Context](https://www.hl7.org/fhir/task.html#12.1.2.1)
-* [Workflow Module](https://www.hl7.org/fhir/workflow-module.html)
-* [Diagnostic Module](https://www.hl7.org/fhir/diagnostics-module.html)
-* [Example: Workflow states for a lab order for a blood test](https://www.hl7.org/fhir/workflow-communications.html#12.6.2.1)
-* [Option G: POST of Task to fulfiller's system](https://www.hl7.org/fhir/workflow-management.html#optiong)
+**Relevant FHIR Docs**                       
+
+  * [Using Tasks in a RESTful Context](https://www.hl7.org/fhir/task.html#12.1.2.1)   
+  * [Workflow Module](https://www.hl7.org/fhir/workflow-module.html)   
+  * [Diagnostic Module](https://www.hl7.org/fhir/diagnostics-module.html)  
+  * [Example: Workflow states for a lab order for a blood test](https://www.hl7.org/fhir/workflow-communications.html#12.6.2.1)   
+  * [Option G: POST of Task to fulfiller's system](https://www.hl7.org/fhir/workflow-management.html#optiong)  
 
 **Relevant OpenMRS Talk Posts**
 [The handling and mapping of lab order status for the lab workflow](https://talk.openmrs.org/t/the-handling-and-mapping-of-lab-order-status-for-the-lab-workflow/26348)
