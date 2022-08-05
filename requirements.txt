@@ -4,3 +4,4 @@ Jinja2==3.0.3
 pymdown-extensions==9.2
 mkdocs-meta-descriptions-plugin==1.0.2
 mkdocs-build-plantuml-plugin==1.7.4
+mkdocs-include-markdown-plugin==3.6.1

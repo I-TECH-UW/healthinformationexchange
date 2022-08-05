@@ -4,18 +4,16 @@ use_directory_urls: false
 nav:
   - Home: "index.md"
   - About: "about.md"
-  - HIE Workflows:
-      - Overview: "hie-workflows.md"
-      - LIS Workflows: "lis-workflows.md"
-      - MPI Workflows: "mpi-workflows.md"
-  - Support:
-      - FAQ: faq.md
-      - Get Additional Help: get-additional-help.md
+  - Laboratory Workflows: lis-workflows/lis-workflows.md
+  - Client Registry / MPI Workflows: mpi-workflows.md
+  - FAQ: faq.md
+  - Get Additional Help: get-additional-help.md
 theme: readthedocs
 extra_css:
   - css/extra.css
 plugins:
   - search
+  - include-markdown
   - build_plantuml:
         render: "server"
         bin_path: "/usr/local/bin/plantuml" # ignored when render: server
