@@ -105,7 +105,7 @@ Exchanges between EMR and LIS are not an easy thing to accomplish due to the man
 
 The lab order workflow follows the OpenHIE specification for standard lab ordering between an EMR and LIS. The workflow is detailed in the following sequence diagram:
 
-![screen1](../img/laborderseq.png)
+![screen1](img/laborderseq.png)
 
 | | Interaction | Data| Transaction Options |
 |---| ------ | ----------- | ----------- |
@@ -118,7 +118,7 @@ The lab order workflow follows the OpenHIE specification for standard lab orderi
 |9| Update FHIR Task Status| FHIR task status updated locally|
 
 #### Lab Results
-![screen2](../img/labresultsseq.png)
+![screen2](img/labresultsseq.png)
 
 | | Interaction | Data| Transaction Options |
 |---| ------ | ----------- | ----------- |
