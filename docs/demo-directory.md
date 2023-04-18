@@ -24,7 +24,7 @@ Workflows Supported:
 
 | Service                                       |                        Link                    |         Username      |    Password   |
 |-----------------------------------------------|------------------------------------------------|-----------------------|---------------|
-| OpenHIM Admin UI                              | https://sedish-haiti.org                       | root@openhim.org      | openhim       |
+| OpenHIM Admin UI                              | [https://sedish-haiti.org]                       | root@openhim.org      | openhim       |
 | OpenCR Client Registry UI                     | https://opencr.sedish-haiti.org/crux/#/Login   | root@intrahealth.org  | intrahealth   |
 | OpenHIM Channel Entrypoint                    | https://openhim-ssl.sedish-haiti.org/          | postman               | postman       |
 
