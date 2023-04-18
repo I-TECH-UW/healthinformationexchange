@@ -2,8 +2,8 @@ site_name: EMR and LIS Data Exchange Knowledge Base
 site_url: ""
 use_directory_urls: false
 nav:
-  - Introduction: "introduction.md"
-  - Demo Servers: "demo-index.md"
+  - Introduction: "index.md"
+  - Demo Servers: "demo-directory.md"
   - Laboratory Workflows: lis-workflows/lis-workflows.md
   - Client Registry / MPI Workflows: mpi-workflows.md
   - FAQ: faq.md
