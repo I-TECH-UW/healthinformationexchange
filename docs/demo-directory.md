@@ -83,3 +83,10 @@ Github: https://github.com/IsantePlus/openmrs-distro-isanteplus
 | Superset                             | [Superset](http://ozone.uwdigi.org:8088)                | admin            | password    |
 | OpenHIM http://ozone.uwdigi.org:3000 | [OpenHIM](http://ozone.uwdigi.org:3000)                 | root@openhim.org | admin       |
 
+## Jamaica 
+
+### Jamaican mHealth two-way texting
+
+| Service                 | Link                                                                | Username | Password    |
+|-------------------------|---------------------------------------------------------------------|----------|-------------|
+| CHT|https://cht.openelis-global.org/#/contacts | medic    | password |
