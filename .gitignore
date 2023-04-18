@@ -1,3 +1,4 @@
 site/
 docs/diagrams/out/*.png
 docs/diagrams/out/*.svg
+.idea/
