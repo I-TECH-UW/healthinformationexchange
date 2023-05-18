@@ -24,9 +24,8 @@ Workflows Supported:
 
 | Service                                       |                        Link                    |         Username      |    Password   |
 |-----------------------------------------------|------------------------------------------------|-----------------------|---------------|
-| OpenHIM Admin UI                              | [https://sedish-haiti.org](https://sedish-haiti.org)                   | root@openhim.org      | openhim       |
 | OpenCR Client Registry UI                     | https://opencr.sedish-haiti.org/crux/#/Login   | root@intrahealth.org  | intrahealth   |
-| OpenHIM Channel Entrypoint                    | https://openhim-ssl.sedish-haiti.org/          | postman               | postman       |
+
 
 ### iSantePlus - Haiti OpenMRS Distribution
 Github: https://github.com/IsantePlus/openmrs-distro-isanteplus
@@ -35,7 +34,6 @@ Github: https://github.com/IsantePlus/openmrs-distro-isanteplus
 |-----------------------------------------------|------------------------------------------------|-----------------------|---------------|
 | iSantePlus Demo Server #1                     | https://isanteplus.sedish-haiti.org/openmrs/   | admin                 | Admin123      |
 | iSantePlus Demo Server #2                     | http://isanteplusdemo.com:8080/openmrs/        | admin                 | Admin123      |
-| iSantePlus Pilot Server                       | http://18.214.76.90:8081/openmrs               | admin                 | Admin123      |
 | iSantePlus 3.x Demo Server                    | http://iplus3.openelis-global.org/             | admin                 | Admin123      |
 
 ## Cote d'Ivoire 
@@ -44,7 +42,6 @@ Github: https://github.com/IsantePlus/openmrs-distro-isanteplus
 
 | Service                                       |                        Link                    |         Username      |    Password   |
 |-----------------------------------------------|------------------------------------------------|-----------------------|---------------|
-| OpenHIM Admin UI                              | https://tap-demo.openelisci.org/openhim/       | root@openhim.org      | openhim       |
 | OpenCR Client Registry UI                     | https://tap-demo.openelisci.org/crux/#/Login   | root@intrahealth.org  | intrahealth   |
 
 ### SIGDEP3 - Cote d'Ivoire OpenMRS Distribution
@@ -60,9 +57,8 @@ Github: https://github.com/IsantePlus/openmrs-distro-isanteplus
 
 | Service                                       |                        Link                    |         Username      |    Password   |
 |-----------------------------------------------|------------------------------------------------|-----------------------|---------------|
-| OpenHIM Admin UI                              | https://bwhie.org                              | root@openhim.org      | openhim       |
+
 | OpenCR Client Registry UI                     | https://opencr.bwhie.org/crux/#/Login          | root@intrahealth.org  | intrahealth   |
-| OpenHIM Channel Entrypoint                    | https://openhim-ssl.bwhie.org/                 | postman               | postman       |
 | Registry API                                  | https://omang-api.bwhie.org/                   |                       |               |
 | HL7 to FHIR Converter                         | https://converter.bwhie.org/                   |                       |               |
 
