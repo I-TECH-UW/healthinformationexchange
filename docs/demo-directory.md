@@ -4,13 +4,13 @@ Here is the documentation of all the demo servers run under The Digital Initiati
 
 These are classified by the project names which include the following:-
 
-## General
+<!-- ## General
 
 | Server                                                   | Link | Username | Password |
 |----------------------------------------------------------|------|----------|----------|
-| OpenMRS 3.x <--> OpenELIS Laboratory Workflow            |      |          |          |
+| OpenMRS 3.x OpenELIS Laboratory Workflow            |      |          |          |
 | OpenELIS Consolidated Server & Patient History Workflows |      |          |          |
-
+-->
 
 ## Haiti
 
