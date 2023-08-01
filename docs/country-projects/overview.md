@@ -5,3 +5,8 @@
 {%
     include-markdown 'botswana-lab-workflows.md'
 %}
+## Cote d'Ivoire Patient Identity Management 
+
+{%
+    include-markdown 'cdi-pim-workflow.md'
+%}
