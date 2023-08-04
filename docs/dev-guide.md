@@ -22,3 +22,4 @@ The following resources provide an early collection of approaches that we use to
 1. [Securing Docker Containers with a Web Application Firewall (WAF) built on ModSecurity and NGINX](https://github.com/theonemule/docker-waf)
 2. [ModSecurity Docker Image](https://github.com/coreruleset/modsecurity-crs-docker)
 3. [Coraza WAF](https://owasp.org/www-project-coraza-web-application-firewall/)
+4. [Certificate-based Security for Docker Networks](https://smallstep.com/blog/automate-docker-ssl-tls-certificates/)
