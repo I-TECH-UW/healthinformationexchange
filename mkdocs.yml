@@ -9,6 +9,7 @@ nav:
   - Client Registry / MPI Workflows: mpi-workflows.md
   - FAQ: faq.md
   - About: "about.md"
+  - Developer Guide: "dev-guide.md"
   - Get Additional Help: get-additional-help.md
 theme: readthedocs
 extra_css:
