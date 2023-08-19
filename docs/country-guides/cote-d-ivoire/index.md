@@ -2,4 +2,4 @@
 
 ### Project Overview
 
-{% include-markdown '../../developer-guide/code-d-ivoire/cdi-pim-workflow.md' %}
+{% include-markdown '../../developer-guide/cote-d-ivoire/cdi-pim-workflow.md' %}
