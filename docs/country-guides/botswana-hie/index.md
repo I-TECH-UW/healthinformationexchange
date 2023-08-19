@@ -36,47 +36,34 @@ The Terminology Service (TS) is responsible for managing terminology collections
 ### Other OpenHIM Mediators 
 The CR and SHR run as OpenHIM mediators. In addition, the following mediators are used to support the HIE workflows:
 
-#### FHIR Converter
-This mediator is responsible for converting FHIR messages to HL7 messages and vice versa. This mediator is implemented here: https://github.com/I-TECH-UW/openhim-mediator-fhir-converter
+- **FHIR Converter**: This mediator is responsible for converting FHIR messages to HL7 messages and vice versa. This mediator is implemented here: https://github.com/I-TECH-UW/openhim-mediator-fhir-converter
 
-#### Omang, BDRS, and Immigration Services
-This mediator provides and interface for the Omang, BDRS, and Immigration databases. This mediator is implemented here (private repository): https://github.com/I-TECH-UW/OmangSVC
+- **Omang, BDRS, and Immigration API**: This mediator provides and interface for the Omang, BDRS, and Immigration databases. This mediator is implemented here (private repository): https://github.com/I-TECH-UW/OmangSVC
 
 ### Common OpenHIE Instant V2 Components
 These components are used across HIE implementations and packaged using Instant OpenHIE V2. A number were based on or inspired by the Jembi platform project: https://github.com/jembi/platform
 
-#### Reverse Proxies
-- [Nginx](https://github.com/I-TECH-UW/hie-botswana/tree/main/reverse-proxy-nginx)
-- [Traefik](https://github.com/I-TECH-UW/hie-botswana/tree/pilot-3-traefik-v2/reverse-proxy-traefik)
-- [Caddy with WAF](https://github.com/I-TECH-UW/hie-botswana/tree/main/reverse-proxy-caddy)
+- **Reverse Proxies**
+    * [Nginx](https://github.com/I-TECH-UW/hie-botswana/tree/main/reverse-proxy-nginx)
+    * [Traefik](https://github.com/I-TECH-UW/hie-botswana/tree/pilot-3-traefik-v2/reverse-proxy-traefik)
+    * [Caddy with WAF](https://github.com/I-TECH-UW/hie-botswana/tree/main/reverse-proxy-caddy)
 
-##### Kafka
-https://github.com/I-TECH-UW/hie-botswana/tree/main/message-bus-kafka
+- **Kafka:** https://github.com/I-TECH-UW/hie-botswana/tree/main/message-bus-kafka
 
-##### HAPI FHIR Store
-https://github.com/I-TECH-UW/hie-botswana/blob/main/fhir-datastore-hapi-fhir/README.md
+- **HAPI FHIR Store:** https://github.com/I-TECH-UW/hie-botswana/blob/main/fhir-datastore-hapi-fhir/README.md
 
-##### Monitoring for Kafka and Docker
-https://github.com/I-TECH-UW/hie-botswana/tree/main/monitoring
+- **Monitoring for Kafka and Docker:** https://github.com/I-TECH-UW/hie-botswana/tree/main/monitoring
 
 ### Externally Managed Services
 These integrations include both point-of-service systems like EMRs and LIMs, as well as HIE components like the Facility Registry. 
 
-#### Facility Registry (Master Facility List)
-*[Link to OpenHIE Documentation](https://guides.ohie.org/arch-spec/openhie-component-specifications-1/openhie-facility-registry-fr)*
+- **Facility Registry (Master Facility List):** [OpenHIE Documentation](https://guides.ohie.org/arch-spec/openhie-component-specifications-1/openhie-facility-registry-fr)* The Facility Registry (FR) or Master Facility List (MFL) is responsible for managing the list of facilities and their health services across the health system. This system is being built and maintained by BITRI.
 
-The Facility Registry (FR) or Master Facility List (MFL) is responsible for managing the list of facilities and their health services across the health system. 
+- **PIMS:** This is a custom-built EMR used in Botswana.
 
-#### PIMS
-This is a custom-built EMR used in Botswana.
+- **Botswana EMR:** This is an OpenMRS-based EMR used in Botswana, and developed by BITRI.
 
-#### Botswana EMR
-This is an OpenMRS-based EMR used in Botswana, and developed by BITRI.
-
-#### IPMS
-This is a EMR and LIS system used in major facilities in Botswana developed by Meditech.
-
-### Developer Guides
+- **IPMS:** This is a EMR and LIS system used in major facilities in Botswana developed by Meditech.
 
 {% include-markdown '../../developer-guide/botswana/botswana-lab-workflows.md' %}
 
