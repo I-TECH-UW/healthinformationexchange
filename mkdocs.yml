@@ -11,7 +11,7 @@ nav:
   - FAQ: faq.md
   - About: "about.md"
   - Get Additional Help: get-additional-help.md
-theme: readthedocs
+theme: material
 extra_css:
   - css/extra.css
 plugins:

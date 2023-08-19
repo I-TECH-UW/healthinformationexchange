@@ -6,3 +6,5 @@ mkdocs-meta-descriptions-plugin==1.0.2
 mkdocs-build-plantuml-plugin==1.7.4
 mkdocs-include-markdown-plugin==3.6.1
 mkdocs-plugin-inline-svg==0.1.0
+mkdocs-versioning==0.4.0
+mkdocs-material==8.1.11
