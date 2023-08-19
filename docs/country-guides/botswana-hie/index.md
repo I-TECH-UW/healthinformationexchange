@@ -3,7 +3,7 @@
 ### Overview
 This guide provides a starting point for learning about the **Botswana Health Information Exchange (HIE)**. The project is based on the **OpenHIE architecture** and uses the **Instant OpenHIE V2** tooling to for packaging, deployment, and horizontal scalability. Currently, the HIE consists of core components of the HIE architecture customized to the Botswana context, as well as components supporting two target workflows: Patient Identity Management and Laboratory Order and Result Management. As this project levereges a number of open standards and global goods (OpenHIE, FHIR, HIE IGs, etc.), this documentation contains a number of references to useful external resources.
 
-**[Link to Github Repository:](https://github.com/I-TECH-UW/hie-botswana)**
+**[Link to Github Repository](https://github.com/I-TECH-UW/hie-botswana)**
 
 ### Architecture
 
