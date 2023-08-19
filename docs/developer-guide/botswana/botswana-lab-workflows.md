@@ -1,4 +1,4 @@
-### Botsawana Laborabory Workflows
+### Dev Guide: Botsawana Laborabory Workflows
 
 #### Introduction
 This guide will go over development, configuration, and debugging the laboratory workflow for Botswana. This 

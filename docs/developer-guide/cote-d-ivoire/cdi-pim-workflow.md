@@ -1,4 +1,4 @@
-### Cote D'Ivoire - Patient Identity Management Workflow
+### Dev Guide: Patient Identity Management Workflow in Cote d'Ivoire
 
 This guide will go over development, configuration, and debugging the laboratory workflow for Botswana. This 
 workflow includes functionality in the SHR and Fhir Converter projects, linked below:

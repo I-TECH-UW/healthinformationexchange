@@ -5,6 +5,4 @@
     include-markdown 'cdi-project-overview.md'
 %}
 
-### Developer's Guides
-
-{% include-markdow '../../developer-guide/cdi-pim-workflow.md' %}
+{% include-markdown '../../developer-guide/cdi-pim-workflow.md' %}
