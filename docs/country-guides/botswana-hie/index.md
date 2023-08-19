@@ -65,5 +65,7 @@ These integrations include both point-of-service systems like EMRs and LIMs, as 
 
 - **IPMS:** This is a EMR and LIS system used in major facilities in Botswana developed by Meditech.
 
-{% include-markdown '../../developer-guide/botswana/botswana-lab-workflows.md' %}
+### Developer Guides
+
+1. **[Botswana Laboratory Workflows](../../developer-guide/index.md#dev-guide-botsawana-laborabory-workflows)**
 
