@@ -1,5 +1,9 @@
 # Health Information Exchange Documentation
 
+*Publised Version:* https://healthinformationexchange.org
+
+*CI Build:* https://i-tech-uw.github.io/healthinformationexchange/index.html
+
 ## Build and Deploy
 
 1. Install `Python3` and `Pip3`.
