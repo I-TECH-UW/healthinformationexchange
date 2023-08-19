@@ -15,6 +15,6 @@
 ## Developer Guide
 
 {%
-    include-markdown 'dev-guide.md'
+    include-markdown '../developer-guide/common/lis-workflows-dev-guide.md'
 %}
 

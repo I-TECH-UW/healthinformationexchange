@@ -4,9 +4,8 @@ use_directory_urls: false
 nav:
   - Introduction: "index.md"
   - Country Projects: "country-guides/index.md"
-  - Developer Guide: "developer-guide/index.md"
+  - Developer Guides: "developer-guide/index.md"
   - Demo Servers: "demo-directory.md"
-  - Country Projects: "country-projects/overview.md"
   - Laboratory Workflows: lis-workflows/lis-workflows.md
   - Client Registry / MPI Workflows: mpi-workflows.md
   - FAQ: faq.md
