@@ -1,7 +1,8 @@
 # Health Information Exchange Documentation
 
-Publised Version: https://healthinformationexchange.org
-CI Build: https://i-tech-uw.github.io/healthinformationexchange/index.html
+*Publised Version:* https://healthinformationexchange.org
+
+*CI Build:* https://i-tech-uw.github.io/healthinformationexchange/index.html
 
 ## Build and Deploy
 
