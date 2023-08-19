@@ -1,10 +1,3 @@
-
-
-### Data Model
-{%
-    include-markdown 'fhir-resources.md'
-%}
-
 ### Tutorial: Lab Order Communication between OpenMRS and OpenELIS
 
 In this tutorial, we will use the resources from this documentation - with support from the [Laboratory Workflow Implementation Guide]() and [OpenHIE Architecture Specifications]() - to determine create a pilot implementation of **Lab Test Order and Result Communication** between an **Electronic Medical Record (EMR)** and a **Lab Information System**. We will use validated open-source solutions for each component of our pilot setup, and will use the OpenHIE specifications to guide our approach, the selection and roles of different components, and the language we use for disucssing the various concepts. 
@@ -19,6 +12,11 @@ We will focus on the following target architecture for our setup, which you can 
 
 This architecture is based on the OpenHIE Specifications for Health Information Exchange components. For this tutorial, we
 will focus on using OpenMRS the reference implementation of an OpenHIE EMR, and OpenELIS, the reference implementation of an OpenHIE LIS. 
+#### Data Model
+{%
+    include-markdown '../../lis-workflows/fhir-resources.md'
+%}
+
 #### Openmrs 3.x
 
 
@@ -39,9 +37,9 @@ will focus on using OpenMRS the reference implementation of an OpenHIE EMR, and 
 
 
 4. Go to the Reff App (2.x) Patient Dashbord  `Prescribed Medication` Widget.
-![screen1](../img/widget.png)    
+![screen1](../../../img/widget.png)    
 *see more on [Creating Orders](https://wiki.openmrs.org/display/projects/Order+Entry+UI+End+User+Guide+for+Creating+Drug+Orders) using the Order Entry Owa.*
-![screen1](../img/order.png)   
+![screen1](../../../img/order.png)   
 
     If the [Lab on FHIR](https://github.com/openmrs/openmrs-module-labonfhir) module is rightly configured ,it will generate the lab FHIR Bundle and push to the remote Fhir Server for OpenELIS to poll the orders
 
@@ -49,11 +47,11 @@ will focus on using OpenMRS the reference implementation of an OpenHIE EMR, and 
  5. Start up the OpenELIS Update Task
 In order to be able to poll OpenELIS for available results, we need to turn on the following task in the OpenMRS scheduler:
 `System Administration` → `Advanced Administration` → `Scheduler` → `Manage Scheduler`
-![screen1](../img/omrsoe1.png)
+![screen1](../../../img/omrsoe1.png)
 
 6. Enable the [patient-test-results-app](https://github.com/openmrs/openmrs-esm-patient-chart/tree/master/packages/esm-patient-test-results-app) for the 3.x Frontenx.
 Go to the Patient DashBoard in 3.x ui and click Test Results. 
-![screen1](../img/test-results.png)
+![screen1](../../../img/test-results.png)
 
 #### iSantéPlus
 1. Install iSantePlus using one of [these approaches](https://github.com/IsantePlus/isanteplus_installation#isanteplus-installation).
@@ -73,19 +71,19 @@ Go to the Patient DashBoard in 3.x ui and click Test Results.
 
 3. To place Lab Orders ,Fill  the `Laboratory Analysis Form`  , select OPenELIS as destination Lab and Save.     
 `Find Patient` → `Patient DashBord` → `Forms` → `Laboratory Analysis`
-![screen1](../img/dashbordForms.png)
-![screen1](../img/formslabAnalysis.png)
-![screen1](../img/labAnanlyisisForm.png)
+![screen1](../../../img/dashbordForms.png)
+![screen1](../../../img/formslabAnalysis.png)
+![screen1](../../../img/labAnanlyisisForm.png)
 NB. The Patient Must have an active vist
 
 4. Start up the OpenELIS Update Task in order to poll for Completed Results from OpenELIS   
  `System Administration` → `Advanced Administration` → `Scheduler` → `Manage Scheduler`
- ![screen1](../img/omrsoe1.png)
+ ![screen1](../../../img/omrsoe1.png)
 
 5. To View The results ,Go to `Laboratory History` on the Patient DashBoard under General Actions.     
 `Find Patient` → `Patient DashBord` → `Laboratory History`
-![screen1](../img/dashbordLabHistory.png)
-![screen1](../img/labHistory.png)
+![screen1](../../../img/dashbordLabHistory.png)
+![screen1](../../../img/labHistory.png)
 
 #### OpenELIS Global 2.6.x 
 The FHIR based Lab Workflow is supported in OpenELIS 2.6 .  
@@ -105,16 +103,16 @@ The FHIR based Lab Workflow is supported in OpenELIS 2.6 .
 1. Ensure OpenELIS has the test that maps to the same LOINC code as the test Concept in OpenMRS.
 This can be added via the  
  `Admin page` → `Test Management` → `Add Tests` 
-![screen1](../img/addTest.png)
+![screen1](../../../img/addTest.png)
 
 1. Configure OpenELIS to accept electronic orders.   
 `Admin` → `Order Entry Configuration` → `external orders`
-![screen1](../img/accepteorder.png)
+![screen1](../../../img/accepteorder.png)
 
 
 1. Search for the Electronic Orders ie
  `Order` → `Electronic Orders` and then Complete the Order
 Note that the user should have the right Lab Unit Priviledges to complete the Order
-![screen1](../img/eOrders.png)
+![screen1](../../../img/eOrders.png)
 
 1. After Results are captured and Validated , OpenELIS sends back the results to OpenMRS as a Diagnostic Report with an Observation 

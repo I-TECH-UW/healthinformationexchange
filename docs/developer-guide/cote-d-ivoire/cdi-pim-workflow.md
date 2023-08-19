@@ -1,10 +1,4 @@
-# Cote D'Ivoire Patient Identity Management Workflow Guide
-
-## Project Overview
-{%
-    include-markdown 'cdi-project-overview.md'
-%}
-## Developer's Guide
+### Dev Guide: Patient Identity Management Workflow in Cote d'Ivoire
 
 This guide will go over development, configuration, and debugging the laboratory workflow for Botswana. This 
 workflow includes functionality in the SHR and Fhir Converter projects, linked below:
@@ -15,7 +9,7 @@ workflow includes functionality in the SHR and Fhir Converter projects, linked b
 The functionality includes Kafka-managed workflows in the SHR project, and FHIR --> HL7 and HL7 --> FHIR mappings in the Fhir Converter project. 
 
 
-## Demo Videos
-[SigDep3 Patient Import and OpenCR AutoMatching](https://youtu.be/SBOdDHTRCmA)
+#### Demo Videos
+- [SigDep3 Patient Import and OpenCR AutoMatching](https://youtu.be/SBOdDHTRCmA)
 
-[OpenCR Decision Rules Configuration and Matching](https://youtu.be/gOT8j6eUq1k)
+- [OpenCR Decision Rules Configuration and Matching](https://youtu.be/gOT8j6eUq1k)
