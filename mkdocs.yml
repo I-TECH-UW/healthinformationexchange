@@ -2,7 +2,7 @@ site_name: EMR and LIS Data Exchange Knowledge Base
 site_url: ""
 use_directory_urls: false
 nav:
-  - Introduction: "index.md"
+  - Home: "index.md"
   - Country Projects: "country-guides/index.md"
   - Developer Guides: "developer-guide/index.md"
   - Demo Servers: "demo-directory.md"
@@ -11,7 +11,15 @@ nav:
   - FAQ: faq.md
   - About: "about.md"
   - Get Additional Help: get-additional-help.md
-theme: material
+theme: 
+  name: material
+  features:
+      - navigation.instant
+      - navigation.instant.progress
+      - navigation.tracking
+      - navigation.tabs
+      - navigation.tabs.sticky
+
 extra_css:
   - css/extra.css
 plugins:
