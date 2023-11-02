@@ -1,4 +1,4 @@
-## Cote d'Ivoire HIE
+## Haiti HIE
 
 ### Project Overview
 This guide provides a starting point for learning about the **Haiti Health Information Exchange (HIE)**. The project is based on the **OpenHIE architecture** and uses the **Instant OpenHIE V2** tooling to for packaging, deployment, and horizontal scalability. Currently, the HIE consists of core components of the HIE architecture customized to the Haiti context, as well as components supporting two target workflows: Patient Identity Management/Roaming Care and Laboratory Order and Result Management. As this project leverages a number of open standards and global goods (OpenHIE, FHIR, HIE IGs, etc.), this documentation contains a number of references to useful external resources.
@@ -9,7 +9,7 @@ This guide provides a starting point for learning about the **Haiti Health Infor
 
 The Haiti HIE is based on the OpenHIE architecture. The following diagram shows the core components of the HIE architecture, and highlights the components currently in scope for implementation as part of the Haiti HIE project.
 
-![Haiti HIE Architecture](./img/SEDISH-May23.png)
+![Haiti HIE Architecture](././img/SEDISH-May23.png)
 
 ### HIE Components Index
 
