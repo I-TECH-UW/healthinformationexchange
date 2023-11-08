@@ -59,5 +59,5 @@ These integrations include both point-of-service systems like EMRs and LIMs, as 
 
 ### Developer Guides
 
-1. **[Zimbabwe Patient Identity Workflows]()**
+1. **[Zimbabwe Patient Identity Workflows](../../developer-guide/zim/zim-pim-workflow.md)**
 

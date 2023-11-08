@@ -1,5 +1,9 @@
 # Developer Guides
 
+## Patient Identity Management Workflow
+
+{% include-markdown 'zim/zim-pim-workflow.md' %}
+
 ## Laboratory Workflows
 
 {% include-markdown 'common/lis-workflows-dev-guide.md' %}
