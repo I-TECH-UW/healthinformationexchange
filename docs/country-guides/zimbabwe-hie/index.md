@@ -3,13 +3,13 @@
 ### Overview
 This guide provides a starting point for learning about the **Zimbabwe Health Information Exchange (HIE)**. The project is based on the **OpenHIE architecture** and uses the **Instant OpenHIE V2** tooling to for packaging, deployment, and horizontal scalability. Currently, the HIE consists of core components of the HIE architecture customized to the Botswana context, as well as components supporting two target workflows: Patient Identity Management and Laboratory Order and Result Management. As this project levereges a number of open standards and global goods (OpenHIE, FHIR, HIE IGs, etc.), this documentation contains a number of references to useful external resources.
 
-**[Link to Github Repository](https://github.com/I-TECH-UW/hie-botswana)**
+**[Link to Github Repository](https://github.com/mohcc/hie-zimbabwe)**
 
 ### Architecture
 
 The Zimbabwe HIE is based on the OpenHIE architecture. The following diagram shows the core components of the HIE architecture, and highlights the components currently in scope for implementation as part of the Botswana HIE project.
 
-![Zimbabwe HIE Architecture](./img/Botswana-HIE.svg)
+![Zimbabwe HIE Architecture]()
 
 ### HIE Components Index
 
@@ -44,15 +44,11 @@ The CR and SHR run as OpenHIM mediators. In addition, the following mediators ar
 These components are used across HIE implementations and packaged using Instant OpenHIE V2. A number were based on or inspired by the Jembi platform project: https://github.com/jembi/platform
 
 - **Reverse Proxies**
-    * [Nginx](https://github.com/I-TECH-UW/hie-botswana/tree/main/reverse-proxy-nginx)
-    * [Traefik](https://github.com/I-TECH-UW/hie-botswana/tree/pilot-3-traefik-v2/reverse-proxy-traefik)
-    * [Caddy with WAF](https://github.com/I-TECH-UW/hie-botswana/tree/main/reverse-proxy-caddy)
-
+    * [Nginx]()
 - **Kafka:** https://github.com/I-TECH-UW/hie-botswana/tree/main/message-bus-kafka
 
 - **HAPI FHIR Store:** https://github.com/I-TECH-UW/hie-botswana/blob/main/fhir-datastore-hapi-fhir/README.md
 
-- **Monitoring for Kafka and Docker:** https://github.com/I-TECH-UW/hie-botswana/tree/main/monitoring
 
 ### Externally Managed Services
 These integrations include both point-of-service systems like EMRs and LIMs, as well as HIE components like the Facility Registry. 
