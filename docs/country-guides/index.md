@@ -8,6 +8,8 @@ This guide provides a starting point for learning about the Country Specific **H
 
 As these projects leverage a number of open standards and global goods (OpenHIE, FHIR, HIE IGs, etc.), this documentation contains a number of references to useful external resources.
 
+*****
+
 ### HIE Components Index
 
 #### Interoperability Layer
