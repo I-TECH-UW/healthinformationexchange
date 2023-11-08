@@ -38,6 +38,7 @@ These components are used across HIE implementations and packaged using Instant 
 #### Point of Service (Externally Managed Services)
 These integrations include both point-of-service systems like EMRs and LIMs, as well as HIE components like the Facility Registry. 
 
+*****
 ### HIE Components Tooling
 
 #### Interoperability Layer ([OpenHIM](https://openhim.org/))
@@ -50,11 +51,11 @@ These integrations include both point-of-service systems like EMRs and LIMs, as 
 
 #### Facility Registry (Master Facility List):** ([GoFR](https://www.facilitymatch.net/documentation))
 
-
+*****
 {% include-markdown 'botswana-hie/index.md' %}
-
+*****
 {% include-markdown 'zimbabwe-hie/index.md' %}
-
+*****
 {% include-markdown 'cote-d-ivoire/index.md' %}
-
+*****
 {% include-markdown 'haiti-hie/index.md' %}
