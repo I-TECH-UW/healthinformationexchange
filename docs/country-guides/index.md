@@ -15,7 +15,7 @@ The Interoperability Layer (IOL) is the core component of the OpenHIE architectu
 
 *[IOL OpenHIE Documentation](https://guides.ohie.org/arch-spec/openhie-component-specifications-1/openhie-interoperability-layer-iol)*
 
-##### Tooling
+**Tooling**
 [OpenHIM](https://openhim.org/)
 
 #### Client Registry (Master Patient Index)
