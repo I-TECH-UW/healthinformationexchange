@@ -7,7 +7,7 @@ This guide provides a starting point for learning about the **Botswana Health In
 
 ### Architecture
 
-The Botswana HIE is based on the OpenHIE architecture. The following diagram shows the core components of the HIE architecture, and highlights the components currently in scope for implementation as part of the Botswana HIE project.
+The Botswana HEALTH INFO E is based on the OpenHIE architecture. The following diagram shows the core components of the HIE architecture, and highlights the components currently in scope for implementation as part of the Botswana HIE project.
 
 ![Botswana HIE Architecture](./img/Botswana-HIE.svg)
 
