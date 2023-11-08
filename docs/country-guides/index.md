@@ -25,6 +25,17 @@ The Terminology Service (TS) is responsible for managing terminology collections
 #### Facility Registry (Master Facility List):** 
 The Facility Registry (FR) or Master Facility List (MFL) is responsible for managing the list of facilities and their health services across the health system.*[Facility Registry OpenHIE Documentation](https://guides.ohie.org/arch-spec/openhie-component-specifications-1/openhie-facility-registry-fr)* 
 
+#### Other OpenHIM Mediators 
+The CR and SHR run as OpenHIM mediators. In addition, the following mediators are used to support the HIE workflows:
+
+- **FHIR Converter**: This mediator is responsible for converting FHIR messages to HL7 messages and vice versa. This mediator is implemented here: https://github.com/I-TECH-UW/openhim-mediator-fhir-converter
+
+#### Common OpenHIE Instant V2 Components
+These components are used across HIE implementations and packaged using Instant OpenHIE V2. A number were based on or inspired by the Jembi platform project: https://github.com/jembi/platform
+
+#### Point of Service (Externally Managed Services)
+These integrations include both point-of-service systems like EMRs and LIMs, as well as HIE components like the Facility Registry. 
+
 ### HIE Components Tooling
 
 #### Interoperability Layer ([OpenHIM](https://openhim.org/))
@@ -36,17 +47,6 @@ The Facility Registry (FR) or Master Facility List (MFL) is responsible for mana
 #### Terminology Service ([Open Concept Lab](https://openconceptlab.org/))
 
 #### Facility Registry (Master Facility List):** ([GoFR](https://www.facilitymatch.net/documentation))
-
-#### Other OpenHIM Mediators 
-The CR and SHR run as OpenHIM mediators. In addition, the following mediators are used to support the HIE workflows:
-
-- **FHIR Converter**: This mediator is responsible for converting FHIR messages to HL7 messages and vice versa. This mediator is implemented here: https://github.com/I-TECH-UW/openhim-mediator-fhir-converter
-
-#### Common OpenHIE Instant V2 Components
-These components are used across HIE implementations and packaged using Instant OpenHIE V2. A number were based on or inspired by the Jembi platform project: https://github.com/jembi/platform
-
-#### Point of Service (Externally Managed Services)
-These integrations include both point-of-service systems like EMRs and LIMs, as well as HIE components like the Facility Registry. 
 
 
 {% include-markdown 'botswana-hie/index.md' %}
