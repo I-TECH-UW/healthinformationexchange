@@ -6,4 +6,4 @@
 
 {% include-markdown 'cote-d-ivoire/index.md' %}
 
-{% include-markdown 'haiti/index.md' %}
+{% include-markdown 'haiti-hie/index.md' %}
