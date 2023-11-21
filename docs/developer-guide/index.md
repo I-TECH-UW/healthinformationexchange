@@ -18,6 +18,8 @@
 
 {% include-markdown 'cote-d-ivoire/cdi-pim-workflow.md' %}
 
+{% include-markdown 'zim/install-ziminstantv2.md' %}
+
 
 
 
