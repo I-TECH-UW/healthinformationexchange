@@ -15,7 +15,7 @@ This section shows the quick instructions of running the ZIM HIE instantV2 setup
 
 3.In the root folder of the cloned repository,run ./get-cli.sh.This downloads the architecure specific instant CLI executable and saves it in the root directory.This allows the CLI to be run with the ./instant command.
 
-4. The above command creates three folders and you need only one basing on your operating system.We will concetrate on the instant-linux folder which you can rename to instant
+4.The above command creates three folders and you need only one basing on your operating system.We will concetrate on the instant-linux folder which you can rename to instant
 
 5.Test that you can now run the CLI with the instant command by running ./instant,this should return a list of the avialable commands
 
