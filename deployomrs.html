@@ -1,0 +1,761 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.11">
+    
+    
+      
+        <title>Lab Orders and Results exchange between OpenMRS and OpenELIS - EMR and LIS Data Exchange Knowledge Base</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.50e68009.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="css/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lab-orders-and-results-exchange-between-openmrs-and-openelis" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="EMR and LIS Data Exchange Knowledge Base" class="md-header__button md-logo" aria-label="EMR and LIS Data Exchange Knowledge Base" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            EMR and LIS Data Exchange Knowledge Base
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lab Orders and Results exchange between OpenMRS and OpenELIS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="EMR and LIS Data Exchange Knowledge Base" class="md-nav__button md-logo" aria-label="EMR and LIS Data Exchange Knowledge Base" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    EMR and LIS Data Exchange Knowledge Base
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="country-guides/index.html" class="md-nav__link">
+        Country Projects
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="developer-guide/index.html" class="md-nav__link">
+        Developer Guides
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="demo-directory.html" class="md-nav__link">
+        Demo Servers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lis-workflows/lis-workflows.html" class="md-nav__link">
+        Laboratory Workflows
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mpi-workflows.html" class="md-nav__link">
+        Client Registry / MPI Workflows
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="faq.html" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="about.html" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="get-additional-help.html" class="md-nav__link">
+        Get Additional Help
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#communication-overview" class="md-nav__link">
+    Communication Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-guide" class="md-nav__link">
+    Implementation Guide
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#isanteplus" class="md-nav__link">
+    iSantéPlus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openelis-global-2x" class="md-nav__link">
+    OpenELIS Global 2.x
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-fhir-resources" class="md-nav__link">
+    Required FHIR Resources
+  </a>
+  
+    <nav class="md-nav" aria-label="Required FHIR Resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#task" class="md-nav__link">
+    Task
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servicerequest" class="md-nav__link">
+    ServiceRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagnosticreport" class="md-nav__link">
+    DiagnosticReport
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observation" class="md-nav__link">
+    Observation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patient" class="md-nav__link">
+    Patient
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relevant-fhir-docs" class="md-nav__link">
+    Relevant FHIR Docs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relevant-openmrs-talk-posts" class="md-nav__link">
+    Relevant OpenMRS Talk Posts
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+<h1 id="lab-orders-and-results-exchange-between-openmrs-and-openelis">Lab Orders and Results exchange between OpenMRS and OpenELIS</h1>
+<p>The Lab Order workflow between OpenELIS and <a href="http://openmrs.org">OpenMRS</a> will use the <a href="https://www.hl7.org/fhir/workflow-module.html">OpenMRS FHIR Workflow Module</a> and suggested <a href="https://www.hl7.org/fhir/workflow-communications.html#12.6.2.1">Communication Patterns</a> to implement the ordering of lab tests from OpenMRS to OpenELIS and the returning the results to OpenMRS.</p>
+<p>The current communication workflow uses HL7 V2.5.1 messages as documented here: (<a href="https://github.com/openelisglobal/openelisglobal-core/wiki/Result-Reporting">https://github.com/openelisglobal/openelisglobal-core/wiki/Result-Reporting</a>). This functionality is implemented in <a href="https://github.com/IsantePlus/openmrs-module-labintegration">openmrs-module-labintegration</a>, an OpenMRS module made for an implementation of OpenMRS deployed in Haiti called <a href="https://github.com/IsantePlus">iSantePlus</a>.  </p>
+<h2 id="communication-overview">Communication Overview</h2>
+<p><img alt="screen1" src="img/omrsoe2.png" /></p>
+<h2 id="implementation-guide">Implementation Guide</h2>
+<h3 id="isanteplus">iSantéPlus</h3>
+<ol>
+<li>
+<p>Install iSantePlus using one of the following approaches:</p>
+<ol>
+<li>
+<p>Docker: <a href="https://github.com/IsantePlus/isanteplus-docker">https://github.com/IsantePlus/isanteplus-docker</a></p>
+</li>
+<li>
+<p>Apache Tomcat WAR: <a href="https://wiki.openmrs.org/download/attachments/235274282/SOP%20iSantePlus%20Installation.docx?version=1&amp;modificationDate=1590637509000&amp;api=v2">SOP iSantePlus Installation.docx</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p><a href="https://wiki.openmrs.org/display/docs/Administering+Modules">Install</a> the <a href="https://github.com/pmanko/openmrs-module-isanteplus-labonfhir">OpenMRS FHIR module</a> using the following omod file: <a href="https://drive.google.com/file/d/1SSlVrChKQ6i0zVbUgzR7Blx_czjiJhcG/view?usp=sharing">openmrs-module-fhir2.omod</a></p>
+</li>
+<li>
+<p>Install the iSantePlus Lab on FHIR module using the following omod file: labonfhir-1.0.0-SNAPSHOT.omod</p>
+</li>
+<li>
+<p>Restart iSantePlus</p>
+</li>
+</ol>
+<p>Start up the OpenELIS Update Task in <code>System Administration</code> → <code>Advanced Administration</code> → <code>Scheduler</code> → <code>Manage Scheduler</code></p>
+<p><img alt="screen1" src="img/omrsoe1.png" /></p>
+<h3 id="openelis-global-2x">OpenELIS Global 2.x</h3>
+<ol>
+<li>Install OpenELIS Global 2.x using the instructions <a href="../install">HERE</a></li>
+<li>Navigate to the "results reporting" configuration: <a href="https://IPforyourserver:8443/OpenELIS-Global/ResultReportingConfiguration.do">https://IPforyourserver:8443/OpenELIS-Global/ResultReportingConfiguration.do</a></li>
+<li>Move the radio button for Result Reporting to "Enable" and enter in the URL for the OpenMRS connection like in the example below. <ul>
+<li>Please note, the Test URL button may not respond to the FHIR module, so please disregard any errors if you click it.  </li>
+</ul>
+</li>
+<li>Click Save at the bottom of the page. </li>
+</ol>
+<p><img alt="screen1" src="img/omrsoe3.png" /></p>
+<h2 id="required-fhir-resources">Required FHIR Resources</h2>
+<h3 id="task">Task</h3>
+<blockquote>
+<p><a href="https://wiki.openmrs.org/display/projects/Task+Resource">more info</a></p>
+</blockquote>
+<p>The Task resource is created along with the corresponding ServiceRequest resource when a clinician creates a TestOrder and decides to send it to OpenELIS.</p>
+<p>This resource is used to track the status of the lab order request from initiation to completion, and as a container for all other resources related to the given order.</p>
+<p><em>Example Task:</em></p>
+<pre><code>{
+    &quot;resourceType&quot;: &quot;Task&quot;,
+    &quot;id&quot;: &quot;88ffa7fb-0419-4097-8b45-24f0d843c5ea&quot;,
+    &quot;identifier&quot;: [
+        {
+            &quot;system&quot;: &quot;http://isanteplus.org/ext/task/identifier&quot;,
+            &quot;value&quot;: &quot;88ffa7fb-0419-4097-8b45-24f0d843c5ea&quot;
+        }
+    ],
+    &quot;basedOn&quot;: [
+        {
+            &quot;reference&quot;: &quot;ServiceRequest/ebf83ba0-9d3c-497f-9aa0-d839ec506202&quot;,
+            &quot;type&quot;: &quot;ServiceRequest&quot;
+        },
+        {
+            &quot;reference&quot;: &quot;ServiceRequest/73e96ecb-a78d-41c8-a55f-d9b90f759e5f&quot;,
+            &quot;type&quot;: &quot;ServiceRequest&quot;
+        }
+    ],
+    &quot;status&quot;: &quot;requested&quot;,
+    &quot;intent&quot;: &quot;order&quot;,
+    &quot;for&quot;: {
+        &quot;reference&quot;: &quot;Patient/e14e9bda-d273-4c74-8509-5732a4ebaf19&quot;,
+        &quot;type&quot;: &quot;Patient&quot;
+    },
+    &quot;encounter&quot;: {
+        &quot;reference&quot;: &quot;Encounter/7f5aabd9-6375-47c8-a8d6-30f219b6e2f1&quot;,
+        &quot;type&quot;: &quot;Encounter&quot;
+    },
+    &quot;authoredOn&quot;: &quot;2020-04-28T17:33:19+00:00&quot;,
+    &quot;owner&quot;: {
+        &quot;reference&quot;: &quot;Practitioner/f9badd80-ab76-11e2-9e96-0800200c9a66&quot;,
+        &quot;type&quot;: &quot;Practitioner&quot;
+    }
+}
+</code></pre>
+<h3 id="servicerequest">ServiceRequest</h3>
+<blockquote>
+<p><a href="https://wiki.openmrs.org/display/projects/ServiceRequest+Resource">more info</a></p>
+</blockquote>
+<p>The ServiceRequest resource represents the TestOrder placed in OpenMRS. It is referenced from the Task with the Task.basedOn element, and sent to OpenELIS with the Task to initiate the processing of the order. </p>
+<p><em>Example Service Request:</em></p>
+<pre><code>{
+    &quot;resourceType&quot;: &quot;ServiceRequest&quot;,
+    &quot;id&quot;: &quot;73e96ecb-a78d-41c8-a55f-d9b90f759e5f&quot;,
+    &quot;status&quot;: &quot;active&quot;,
+    &quot;intent&quot;: &quot;order&quot;,
+    &quot;code&quot;: {
+        &quot;coding&quot;: [
+            {
+                &quot;code&quot;: &quot;790AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;
+            },
+            {
+                &quot;system&quot;: &quot;http://loinc.org&quot;,
+                &quot;code&quot;: &quot;14682-9&quot;
+            },
+            {
+                &quot;system&quot;: &quot;urn:oid:2.16.840.1.113883.3.7201&quot;,
+                &quot;code&quot;: &quot;790&quot;
+            }
+        ]
+    },
+    &quot;subject&quot;: {
+        &quot;reference&quot;: &quot;Patient/e14e9bda-d273-4c74-8509-5732a4ebaf19&quot;,
+        &quot;type&quot;: &quot;Patient&quot;
+    },
+    &quot;encounter&quot;: {
+        &quot;reference&quot;: &quot;Encounter/7f5aabd9-6375-47c8-a8d6-30f219b6e2f1&quot;,
+        &quot;type&quot;: &quot;Encounter&quot;
+    }
+}
+</code></pre>
+<h3 id="diagnosticreport">DiagnosticReport</h3>
+<blockquote>
+<p><a href="https://wiki.openmrs.org/display/projects/DiagnosticReport+Resource">more info</a></p>
+</blockquote>
+<p>The DiagnosticReport resource  is the container for the results of an Order, and holds these results in the DiagnosticReport.result element as references to Observation resources. </p>
+<p><em>Example Diagnostic Report</em></p>
+<pre><code>{
+  &quot;resourceType&quot;: &quot;DiagnosticReport&quot;,
+  &quot;id&quot;: &quot;93&quot;,
+  &quot;meta&quot;: {
+    &quot;versionId&quot;: &quot;1&quot;,
+    &quot;lastUpdated&quot;: &quot;2020-04-28T17:33:36.163+00:00&quot;,
+    &quot;source&quot;: &quot;#55t4lpDZF4q3TCZ0&quot;
+  },
+  &quot;text&quot;: {
+    &quot;status&quot;: &quot;generated&quot;,
+    &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;div class=\&quot;hapiHeaderText\&quot;&gt; Untitled Diagnostic Report &lt;/div&gt;&lt;table class=\&quot;hapiPropertyTable\&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Status&lt;/td&gt;&lt;td&gt;FINAL&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+  },
+  &quot;identifier&quot;: [
+    {
+      &quot;system&quot;: &quot;https://isanteplusdemo.com/openmrs/ws/fhir2/&quot;,
+      &quot;value&quot;: &quot;ebf83ba0-9d3c-497f-9aa0-d839ec506202&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;code&quot;: {
+    &quot;coding&quot;: [
+      {
+        &quot;code&quot;: &quot;1008AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;
+      },
+      {
+        &quot;system&quot;: &quot;http://loinc.org&quot;,
+        &quot;code&quot;: &quot;22748-8&quot;
+      },
+      {
+        &quot;system&quot;: &quot;urn:oid:2.16.840.1.113883.3.7201&quot;,
+        &quot;code&quot;: &quot;1008&quot;
+      }
+    ]
+  },
+  &quot;subject&quot;: {
+    &quot;reference&quot;: &quot;Patient/2&quot;
+  },
+  &quot;result&quot;: [
+    {
+      &quot;reference&quot;: &quot;Observation/92&quot;,
+      &quot;type&quot;: &quot;Observation&quot;
+    }
+  ]
+}
+</code></pre>
+<h3 id="observation">Observation</h3>
+<blockquote>
+<p><a href="https://wiki.openmrs.org/display/projects/Observation+Resource">more info</a></p>
+</blockquote>
+<p>The Observation resource contains the results of the Lab Order request.</p>
+<p><em>Example Observation:</em></p>
+<pre><code>{
+  &quot;resourceType&quot;: &quot;Observation&quot;,
+  &quot;id&quot;: &quot;92&quot;,
+  &quot;meta&quot;: {
+    &quot;versionId&quot;: &quot;1&quot;,
+    &quot;lastUpdated&quot;: &quot;2020-04-28T17:33:36.124+00:00&quot;,
+    &quot;source&quot;: &quot;#xAVz0uUE6c3l42Za&quot;
+  },
+  &quot;identifier&quot;: [
+    {
+      &quot;system&quot;: &quot;https://isanteplusdemo.com/openmrs/ws/fhir2/&quot;,
+      &quot;value&quot;: &quot;ebf83ba0-9d3c-497f-9aa0-d839ec506202&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;code&quot;: {
+    &quot;coding&quot;: [
+      {
+        &quot;code&quot;: &quot;1008AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;
+      },
+      {
+        &quot;system&quot;: &quot;http://loinc.org&quot;,
+        &quot;code&quot;: &quot;22748-8&quot;
+      },
+      {
+        &quot;system&quot;: &quot;urn:oid:2.16.840.1.113883.3.7201&quot;,
+        &quot;code&quot;: &quot;1008&quot;
+      }
+    ]
+  },
+  &quot;subject&quot;: {
+    &quot;reference&quot;: &quot;Patient/2&quot;
+  },
+  &quot;valueQuantity&quot;: {
+    &quot;value&quot;: 55,
+    &quot;unit&quot;: &quot;UI/L&quot;
+  }
+}
+</code></pre>
+<h3 id="patient">Patient</h3>
+<blockquote>
+<p><a href="https://wiki.openmrs.org/display/projects/Patient+Resource">more info</a></p>
+</blockquote>
+<p>The Patient resource contains vital information for OpenELIS to fullfill the lab order request, and is referenced by the Task.</p>
+<p>Example Patient:</p>
+<pre><code>{
+    &quot;resourceType&quot;: &quot;Patient&quot;,
+    &quot;id&quot;: &quot;e14e9bda-d273-4c74-8509-5732a4ebaf19&quot;,
+    &quot;identifier&quot;: [
+        {
+            &quot;id&quot;: &quot;5981a256-d60c-44b1-beae-9bdd2cf572f8&quot;,
+            &quot;use&quot;: &quot;official&quot;,
+            &quot;system&quot;: &quot;iSantePlus ID&quot;,
+            &quot;value&quot;: &quot;10012R&quot;
+        },
+        {
+            &quot;id&quot;: &quot;75a67d54-6fff-44d1-9c3e-2116c967b475&quot;,
+            &quot;use&quot;: &quot;usual&quot;,
+            &quot;system&quot;: &quot;Code National&quot;,
+            &quot;value&quot;: &quot;100000&quot;
+        },
+        {
+            &quot;id&quot;: &quot;29447d21-3cd6-42a9-9ab2-79ebfa710a01&quot;,
+            &quot;use&quot;: &quot;usual&quot;,
+            &quot;system&quot;: &quot;ECID&quot;,
+            &quot;value&quot;: &quot;04d759e0-5d02-11e8-b899-0242ac12000b&quot;
+        }
+    ],
+    &quot;active&quot;: true,
+    &quot;name&quot;: [
+        {
+            &quot;id&quot;: &quot;511275de-e301-44a3-95d2-28d0d3b35387&quot;,
+            &quot;family&quot;: &quot;Mankowski&quot;,
+            &quot;given&quot;: [
+                &quot;Piotr&quot;
+            ]
+        }
+    ],
+    &quot;gender&quot;: &quot;male&quot;,
+    &quot;birthDate&quot;: &quot;1987-01-01&quot;,
+    &quot;deceasedBoolean&quot;: false,
+    &quot;address&quot;: [
+        {
+            &quot;id&quot;: &quot;d4f7c809-3d01-4032-b64d-4c22e8eccbbc&quot;,
+            &quot;use&quot;: &quot;home&quot;,
+            &quot;country&quot;: &quot;Haiti&quot;
+        }
+    ]
+}
+
+</code></pre>
+<h2 id="relevant-fhir-docs">Relevant FHIR Docs</h2>
+<ul>
+<li><a href="https://www.hl7.org/fhir/task.html#12.1.2.1">Using Tasks in a RESTful Context</a></li>
+<li><a href="https://www.hl7.org/fhir/workflow-module.html">Workflow Module</a></li>
+<li><a href="https://www.hl7.org/fhir/diagnostics-module.html">Diagnostic Module</a></li>
+<li><a href="https://www.hl7.org/fhir/workflow-communications.html#12.6.2.1">Example: Workflow states for a lab order for a blood test</a></li>
+<li><a href="https://www.hl7.org/fhir/workflow-management.html#optiong">Option G: POST of Task to fulfiller's system</a></li>
+</ul>
+<h2 id="relevant-openmrs-talk-posts">Relevant OpenMRS Talk Posts</h2>
+<p><a href="https://talk.openmrs.org/t/the-handling-and-mapping-of-lab-order-status-for-the-lab-workflow/26348">The handling and mapping of lab order status for the lab workflow</a></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": ".", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.092fa1f6.min.js"}</script>
+    
+    
+      <script src="assets/javascripts/bundle.5a9542cf.min.js"></script>
+      
+    
+  </body>
+</html>

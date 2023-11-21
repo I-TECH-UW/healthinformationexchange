@@ -1,0 +1,1440 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.11">
+    
+    
+      
+        <title>Laboratory Workflows - EMR and LIS Data Exchange Knowledge Base</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.50e68009.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#laboratory-workflows" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="EMR and LIS Data Exchange Knowledge Base" class="md-header__button md-logo" aria-label="EMR and LIS Data Exchange Knowledge Base" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            EMR and LIS Data Exchange Knowledge Base
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Laboratory Workflows
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="EMR and LIS Data Exchange Knowledge Base" class="md-nav__button md-logo" aria-label="EMR and LIS Data Exchange Knowledge Base" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    EMR and LIS Data Exchange Knowledge Base
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../country-guides/index.html" class="md-nav__link">
+        Country Projects
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../developer-guide/index.html" class="md-nav__link">
+        Developer Guides
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo-directory.html" class="md-nav__link">
+        Demo Servers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Laboratory Workflows
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="lis-workflows.html" class="md-nav__link md-nav__link--active">
+        Laboratory Workflows
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementer-guide" class="md-nav__link">
+    Implementer Guide
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementer Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-identify-a-minimum-dataset" class="md-nav__link">
+    Step #1: Identify a minimum dataset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-identify-a-standard-coding-terminology" class="md-nav__link">
+    Step #2: Identify a standard coding terminology
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-identify-the-relevant-concepts-from-each-system" class="md-nav__link">
+    Step #3: Identify the relevant concepts from each system
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-create-mappings-between-the-concept-catalogs" class="md-nav__link">
+    Step #4: Create Mappings between the concept catalogs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-map-all-other-relevant-concepts-and-identifiers-needed-between-emr-and-lis" class="md-nav__link">
+    Step 5: Map all other relevant concepts and identifiers needed between EMR and LIS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-identify-data-exchange-patterns-based-on-your-hie-and-infrastructure-context" class="md-nav__link">
+    Step #6: Identify data exchange patterns based on your HIE and infrastructure context
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-build-out-the-technological-approach-for-the-workflow-within-and-between-the-emr-and-lis" class="md-nav__link">
+    Step #7: Build out the technological approach for the workflow within and between the EMR and LIS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-8-identify-and-develop-mechanisms-for-handling-potential-issues-and-caveats" class="md-nav__link">
+    Step #8: Identify and develop mechanisms for handling potential issues and caveats
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#communication-overview" class="md-nav__link">
+    Communication Overview
+  </a>
+  
+    <nav class="md-nav" aria-label="Communication Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lab-orders" class="md-nav__link">
+    Lab Orders
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lab-results" class="md-nav__link">
+    Lab Results
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#developer-guide" class="md-nav__link">
+    Developer Guide
+  </a>
+  
+    <nav class="md-nav" aria-label="Developer Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tutorial-lab-order-communication-between-openmrs-and-openelis" class="md-nav__link">
+    Tutorial: Lab Order Communication between OpenMRS and OpenELIS
+  </a>
+  
+    <nav class="md-nav" aria-label="Tutorial: Lab Order Communication between OpenMRS and OpenELIS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-model" class="md-nav__link">
+    Data Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task" class="md-nav__link">
+    Task
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servicerequest" class="md-nav__link">
+    ServiceRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagnosticreport" class="md-nav__link">
+    DiagnosticReport
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observation" class="md-nav__link">
+    Observation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patient" class="md-nav__link">
+    Patient
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#useful-links" class="md-nav__link">
+    Useful Links
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openmrs-3x" class="md-nav__link">
+    Openmrs 3.x
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isanteplus" class="md-nav__link">
+    iSantéPlus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openelis-global-26x" class="md-nav__link">
+    OpenELIS Global 2.6.x
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mpi-workflows.html" class="md-nav__link">
+        Client Registry / MPI Workflows
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq.html" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about.html" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../get-additional-help.html" class="md-nav__link">
+        Get Additional Help
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementer-guide" class="md-nav__link">
+    Implementer Guide
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementer Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-1-identify-a-minimum-dataset" class="md-nav__link">
+    Step #1: Identify a minimum dataset
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-identify-a-standard-coding-terminology" class="md-nav__link">
+    Step #2: Identify a standard coding terminology
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-identify-the-relevant-concepts-from-each-system" class="md-nav__link">
+    Step #3: Identify the relevant concepts from each system
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-create-mappings-between-the-concept-catalogs" class="md-nav__link">
+    Step #4: Create Mappings between the concept catalogs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-map-all-other-relevant-concepts-and-identifiers-needed-between-emr-and-lis" class="md-nav__link">
+    Step 5: Map all other relevant concepts and identifiers needed between EMR and LIS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-identify-data-exchange-patterns-based-on-your-hie-and-infrastructure-context" class="md-nav__link">
+    Step #6: Identify data exchange patterns based on your HIE and infrastructure context
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-build-out-the-technological-approach-for-the-workflow-within-and-between-the-emr-and-lis" class="md-nav__link">
+    Step #7: Build out the technological approach for the workflow within and between the EMR and LIS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-8-identify-and-develop-mechanisms-for-handling-potential-issues-and-caveats" class="md-nav__link">
+    Step #8: Identify and develop mechanisms for handling potential issues and caveats
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#communication-overview" class="md-nav__link">
+    Communication Overview
+  </a>
+  
+    <nav class="md-nav" aria-label="Communication Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lab-orders" class="md-nav__link">
+    Lab Orders
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lab-results" class="md-nav__link">
+    Lab Results
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#developer-guide" class="md-nav__link">
+    Developer Guide
+  </a>
+  
+    <nav class="md-nav" aria-label="Developer Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tutorial-lab-order-communication-between-openmrs-and-openelis" class="md-nav__link">
+    Tutorial: Lab Order Communication between OpenMRS and OpenELIS
+  </a>
+  
+    <nav class="md-nav" aria-label="Tutorial: Lab Order Communication between OpenMRS and OpenELIS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-model" class="md-nav__link">
+    Data Model
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task" class="md-nav__link">
+    Task
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servicerequest" class="md-nav__link">
+    ServiceRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagnosticreport" class="md-nav__link">
+    DiagnosticReport
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#observation" class="md-nav__link">
+    Observation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patient" class="md-nav__link">
+    Patient
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#useful-links" class="md-nav__link">
+    Useful Links
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openmrs-3x" class="md-nav__link">
+    Openmrs 3.x
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isanteplus" class="md-nav__link">
+    iSantéPlus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openelis-global-26x" class="md-nav__link">
+    OpenELIS Global 2.6.x
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+<h1 id="laboratory-workflows">Laboratory Workflows</h1>
+<h2 id="overview">Overview</h2>
+<!-- BEGIN INCLUDE overview.md -->
+
+<p>You can view a video demo of the LIS-EMR exchange between OpenMRS(EMR) and OpenELIS <a href="https://www.youtube.com/watch?v=PdPM6KLcGQo">here</a></p>
+<p>A critical workflow for high quality care is the timely and accurate exchange of laboratory orders and test results between the clinic and laboratories.  To digitize this workflow, you need an electronic medical record (EMR) capable of capturing orders, and a laboratory information system (LIS/LIMS) capable of order entry and capturing of test results associated with that order.  Using the most recent informatics standards, this digitized Lab Order and Results workflow SOP focuses on the use of FHIR and the OpenHIE architectural pattern for implementation, and includes several implementation approaches depending on context (i.e. direct bridge, older messaging standards only in the local systems).  This Lab Order and Results workflow utilizes the <a href="https://www.hl7.org/fhir/workflow-module.html">FHIR Workflow Module</a> and suggested <a href="https://www.hl7.org/fhir/workflow-communications.html#12.6.2.1">Communication Patterns</a> to implement the ordering of lab tests from an EMR to an LIS and resulting from LIS to EMR.</p>
+<!-- END INCLUDE -->
+
+<h2 id="implementer-guide">Implementer Guide</h2>
+<!-- BEGIN INCLUDE implementer-guide.md -->
+<h3 id="getting-started">Getting Started</h3>
+<p>To get started in implementing the EMR-LIS workflow between electronic systems, it is best to understand the full scope of high level steps that will possibly need to be done, depending on your situation in the environment you are implementing in.  In general, these high-level steps may need to be taken.  Details about each of these steps and the possible caveats will follow.</p>
+<ol>
+<li>Identify the minimum data set to be exchanged between the systems.</li>
+<li>Use a universally unique identification system (coding) for identifying and mapping lab tests for both systems.</li>
+<li>Extract or create a laboratory test catalog from both the EMR and LIS.</li>
+<li>Crosswalk the listing of lab tests between the EMR and LIS to map those lab tests to the unique ID system (coding).</li>
+<li>Map all other relevant concepts and identifiers needed between EMR and LIS</li>
+<li>Identify the data exchange method between the systems based on your HIE and infrastructure context. </li>
+<li>Build out the technological approach for the workflow within and between the EMR and LIS.</li>
+<li>Identify and develop mechanisms for handling potential issues and caveats.</li>
+</ol>
+<h3 id="step-1-identify-a-minimum-dataset">Step #1: Identify a minimum dataset</h3>
+<p>Working with stakeholders, key partners, and system users, your team will need to identify the minimum data set to be exchanged between the systems.  Resources to inform the minimum data set could be paper forms that are used by providers for clinical orders, lab order and test result forms used by the laboratory, data sets from the EMR and LIS, and input from relevant technical working groups/steering committees, clinical partners and laboratory partners, and system users.  It is critical that the technical stewards / teams of the systems participate in this definition of the minimum data set to help determine what data is available in the systems, identify gaps in data or system abilities in capturing/providing that data, and feasibility in the system utilizing that data from the other system.</p>
+<p><strong>Resources</strong></p>
+<h3 id="step-2-identify-a-standard-coding-terminology">Step #2: Identify a standard coding terminology</h3>
+<p>Successful communication of laboratory orders can only happen if each system involved is using a 
+common language for key concepts like Lab test types. Aa common terminology is critical to correctly 
+understand and process the messages sent and recieved. Many EMR and LIS systems have not been built 
+using the same terminology for the laboratory orders and results, and therefore, must be mapped to 
+an agreed upon common terminology for that exchange.  To do this, your team will need to work with 
+stakeholders and key partners to either create a local set of shared terminology that uses unique IDs 
+for each term, or your team can utilize an international standard coding system to create this shared terminology set.<br />
+We recommend using the LOINC international standard for that shared terminology set of orders and results needed for your context.</p>
+<p><strong>Resources</strong> 
+- <a href="https://loinc.org/">LOINC specification</a></p>
+<h3 id="step-3-identify-the-relevant-concepts-from-each-system">Step #3: Identify the relevant concepts from each system</h3>
+<p>Each EMR, LIS, or other system that is partificating in the Laboratory Workflows will have a set of 
+concepts key for this communication. Some systems use standard terminologies like Loinc, and others have 
+custom concepts unique to that system. In both cases, we need identify and catalog the relevant concepts
+in each system. </p>
+<p>This exercise can be done manually, using a spreadsheet or similar tool to create a line listing of the supported
+laboratory test types, result types, panels, units, and other key concepts from each system. For example, we might 
+end up with two lists, one from the EMR and one from the LIS. 
+This test catalog will be used to map between the systems in step 4. </p>
+<p><em>Note: Alternatively, we can use a terminology management service such as <a href="https://openconceptlab.org/">Open Concept Lab</a> for 
+cataloging, mapping, and managing our concepts. A tutorial for this approach is coming soon!</em></p>
+<p><strong>Resources</strong>
+- <a href="https://docs.google.com/spreadsheets/d/1y9q42jMB2dTOClxJP3NU0UJ7xnX1qh_kCjlcNqBL49E/edit#gid=0">Example: Haiti OpenELIS Lab System Test Catalog</a></p>
+<h3 id="step-4-create-mappings-between-the-concept-catalogs">Step #4: Create Mappings between the concept catalogs</h3>
+<p>We need to crosswalk the listing of lab tests between the EMR and LIS to map those lab tests to the unique ID system (coding)</p>
+<p>In step #2, your team identified the shared terminology set that would stand as the source of truth for all terminologies that are exchanged in your HIE and provide unique identifiers for that terminology.  Using your laboratory test catalogs created in step #3, you will need to now map your lab tests and results from both the EMR and the LIS to the shared terminology set.  We recommend the use of LOINC codes as the mapping identifier.</p>
+<p><strong>Problem Solving:</strong> 
+In some cases, the EMR may allow ordering tests by panel.  If the order only provides the panel and does not include individual tests, you will need to map panels to individual tests for the order and develop an additional mechanism to handle the translation for the proper exchange to the LIS.</p>
+<p><strong>Resources</strong>
+- <a href="https://docs.google.com/spreadsheets/d/1jatq2MpMQPIrZvwCKeij6VEiNdPXaRcTTElJJG29dsM/edit#gid=0">Example: Botswana EMR-LIS Terminology Mapping</a>
+- <a href="https://docs.google.com/spreadsheets/d/1NgFUvbsDldy3N-xvsXntBMQ6CC1FCtqvchwpAjnzAkA/edit#gid=0">Example: Haiti iSantePlus Terminology Mapping to LOINC</a></p>
+<h3 id="step-5-map-all-other-relevant-concepts-and-identifiers-needed-between-emr-and-lis">Step 5: Map all other relevant concepts and identifiers needed between EMR and LIS</h3>
+<p>Many times in systems that are not based on standards, the technical architectural decisions means the requirements for data fields may be different than the requirements in other systems for those data elements.  In these cases, when messages are exchanged between systems, those data elements that fit the requirements for the sending system do not meet the requirements for that data in the receiving system and will cause an error, and ultimately the transaction fails and the message and its data is not accepted into the receiving system.  To minimize errors of this type, ensure there is mapping of  all other relevant concepts between EMR and LIS.  Some of the most common concepts/data that might have issues do to requirements and algorithms tied to that data include (but are not limited to):</p>
+<ul>
+<li>Patient Identifiers</li>
+<li>Facility Identifiers</li>
+<li>System Identifiers</li>
+</ul>
+<p><strong>Problem Solving</strong>: Frequently, the EMR and LIS have different required formats, lengths, or algorithms for identifiers that can cause errors and mismatches when messaging between systems.  There may be negotiating and workarounds that will need to be discussed and a mechanism for handling developed.  An example of this was in the Haiti iSantePlus (OpenMRS) exchange with a proprietary lab system that had specific algorithms attached to the patient identifiers fields in their database that caused a mismatch with the data sent.  In addition, there were other data elements that needed “massaging” due to character limits that don’t accommodate the full length of the data sent.  These types of issues needed extensive negotiation and custom development of how the data in the message would be constructed, formatted, and consumed in order to reliably exchange data between these systems.*</p>
+<h3 id="step-6-identify-data-exchange-patterns-based-on-your-hie-and-infrastructure-context">Step #6: Identify data exchange patterns based on your HIE and infrastructure context</h3>
+<p>There are multiple ways to approach the exchange of data, and will be decided by understanding the context in which your exchange will operate, and the requirements for data availability from the exchange.  You will use either a push of data from a system, or a pull of data from a system, or a mixed method approach depending on the implementation, system availability and connectivity, components available in the HIE, and requirements for timeliness and data availability from the exchange.  For example, you can set up your exchange of orders to use any of the following approaches:
+- Push data from EMR to central repository (i.e. SHR), the central repository alerts the LIS, and subsequently the data is pulled by the LIS
+- The LIS can periodically check for data to be pulled from an EMR or a central repository system (i.e. SHR), conducting the pull with all data with an order status of <code>ordered</code>
+- An order is pushed by an EMR automatically to the LIS.  In this case, there is no way to know if the order reached the LIS or not.  We do not recommend this approach when using FHIR due to the lack of any receipt acknowledge messaging in the FHIR workflow standard.</p>
+<h3 id="step-7-build-out-the-technological-approach-for-the-workflow-within-and-between-the-emr-and-lis">Step #7: Build out the technological approach for the workflow within and between the EMR and LIS</h3>
+<p>Use the technical artifacts in the Implementation Guide and the detailed technical sections in this SOP to develop and configure the EMR and LIS exchange.  Every EMR-LIS exchange is somewhat unique, and will require customization of these artifacts and approaches to meet the needs of the context you are working in.  For additional support during your build phase, engage with other developers and implementers in the relevant global goods communities of practice, such as OpenHIE LIS COP, OpenMRS FHIR Squad, and LIS software forums (i.e. OpenELIS).  Many folks are eager to share their experience and provide answers for how to use these technical artifacts and tools to achieve this exchange.  In addition, our team is happy to answer questions you may have when setting up your exchange following this guide.</p>
+<p><strong>Resources</strong>
+- <a href="https://wiki.openmrs.org/display/projects/OpenMRS+HL7+FHIR+Solutions">OpenMRS FHIR Squad</a>, <a href="https://wiki.openmrs.org/display/projects/FHIR+Squad+Notes">FHIR Squad Bi-Weekly Calls</a>, and <a href="https://talk.openmrs.org/c/projects/fhir/52">Talk FHIR Forum</a>
+<a href="https://wiki.ohie.org/pages/viewpage.action?pageId=36536662">OpenHIE LIS COP</a> and <a href="https://ohieliscop.slack.com/">Slack</a>
+<a href="https://talk.openelisci.org/">OpenELIS Forum</a></p>
+<h3 id="step-8-identify-and-develop-mechanisms-for-handling-potential-issues-and-caveats">Step #8: Identify and develop mechanisms for handling potential issues and caveats</h3>
+<p>Exchanges between EMR and LIS are not an easy thing to accomplish due to the many nuances to the workflows and the data collected and exchanged in the process.  Your team will need to identify additional potential issues for the exchange specific to the workflows you are addressing, and develop mechanisms to handle those.  Other problem areas to look for are, but no limited to:
+- Canceled and Rejected lab orders
+- Corrected Results after report out
+- Specialized and interim/intermediate results (e.g., Microbiology)
+- Ordering of test panels rather than individual lab tests
+- Intermittent connectivity and infrastructure issues</p>
+<h3 id="communication-overview">Communication Overview</h3>
+<h4 id="lab-orders">Lab Orders</h4>
+<p>The lab order workflow follows the OpenHIE specification for standard lab ordering between an EMR and LIS. The workflow is detailed in the following sequence diagram:</p>
+<p><img alt="screen1" src="../img/laborderseq.png" /></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Interaction</th>
+<th>Data</th>
+<th>Transaction Options</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Create Lab Order</td>
+<td>Order Save generates a new FHIR Task Bundled Order by creating a Task FHIR R4 Task Resource with a reference to a Service Request with order information</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Send Lab Order</td>
+<td>FHIR Task bundled order is sent to the IOL. Task status is aligned with the FHIR workflow communication pattern found <a href="https://www.hl7.org/fhir/workflow-communications.html#12.6.2.1">here</a></td>
+<td></td>
+</tr>
+<tr>
+<td>3,4</td>
+<td>Send New Lab Order</td>
+<td>Bundled order is routed through the IOL to both the SHR and the LIS</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Save Order and Update Order Status</td>
+<td>FHIR R4 Task Resource Status is updated locally to either <code>rejected</code> or <code>accepted</code>. A FHIR R4 ServiceRequest Resource (example) is created for order processing with a reference to the associated task. EMR test requests and LIS orders are matched based on LOINC codes.</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Send New Lab Order</td>
+<td>Bundled order is routed through the IOL to both the SHR and the LIS</td>
+<td></td>
+</tr>
+<tr>
+<td>7,8</td>
+<td>Send Order Update</td>
+<td>IOL routes the updated FHIR R4 Tasks to the SHR and the EMR</td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Update FHIR Task Status</td>
+<td>FHIR task status updated locally</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="lab-results">Lab Results</h4>
+<p><img alt="screen2" src="../img/labresultsseq.png" /></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Interaction</th>
+<th>Data</th>
+<th>Transaction Options</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Results Saved and FHIR Task Updated</td>
+<td>The results save generates a FHIR R4 DiagnosticReport Resource () with referenced FHIR R4 Observation resources () to store the results,  and a reference to the associated Patient and Task Resource.</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Search for Updated FHIR Tasks</td>
+<td></td>
+<td>FHIR R4 Search for Tasks based on tasks for which the owner is the EMR, and which have a status ‘completed’</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Return FHIR Updated Tasks</td>
+<td>FHIR R4 Task Resource with status ‘completed’ and reference to FHIR R4 DiagnosticReport</td>
+<td>FHIR R4 bundle search response ()</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Search for Associated Diagnostic Reports</td>
+<td></td>
+<td>FHIR R4 Search for DiagnosticReports by UUID</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Return Associated Diagnostic Reports</td>
+<td>FHIR R4 DiagnosticReport Resource with</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Update FHIR Task Status, Store DiagnosticReports and Save Results</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- END INCLUDE -->
+
+<h2 id="developer-guide">Developer Guide</h2>
+<!-- BEGIN INCLUDE ../developer-guide/common/lis-workflows-dev-guide.md -->
+<h3 id="tutorial-lab-order-communication-between-openmrs-and-openelis">Tutorial: Lab Order Communication between OpenMRS and OpenELIS</h3>
+<p>In this tutorial, we will use the resources from this documentation - with support from the <a href="../developer-guide/common">Laboratory Workflow Implementation Guide</a> and <a href="../developer-guide/common">OpenHIE Architecture Specifications</a> - to determine create a pilot implementation of <strong>Lab Test Order and Result Communication</strong> between an <strong>Electronic Medical Record (EMR)</strong> and a <strong>Lab Information System</strong>. We will use validated open-source solutions for each component of our pilot setup, and will use the OpenHIE specifications to guide our approach, the selection and roles of different components, and the language we use for disucssing the various concepts. </p>
+<p>To get a better idea about the concepts and data elements were using, visit the <a href="../developer-guide/common">Laboratory Workflows IG</a> to a look at:
+1. Our list of key concepts
+2. Our logical model</p>
+<p>We will focus on the following target architecture for our setup, which you can check out in the <a href="../developer-guide/common">IG</a>:</p>
+<p><img alt="hie-overview" src="https://i-tech-uw.github.io/laboratory-workflows-ig/assets/images/hie-based.png" /></p>
+<p>This architecture is based on the OpenHIE Specifications for Health Information Exchange components. For this tutorial, we
+will focus on using OpenMRS the reference implementation of an OpenHIE EMR, and OpenELIS, the reference implementation of an OpenHIE LIS. </p>
+<h4 id="data-model">Data Model</h4>
+<!-- BEGIN INCLUDE ../../lis-workflows/fhir-resources.md -->
+<h4 id="task">Task</h4>
+<blockquote>
+<p><a href="https://wiki.openmrs.org/display/projects/Task+Resource">more info</a></p>
+</blockquote>
+<p>The Task resource is created along with the corresponding ServiceRequest resource when a clinician creates a TestOrder and decides to send it to OpenELIS.</p>
+<p>This resource is used to track the status of the lab order request from initiation to completion, and as a container for all other resources related to the given order.</p>
+<p><em>Example Task:</em></p>
+<pre><code class="language-json">{
+    &quot;resourceType&quot;: &quot;Task&quot;,
+    &quot;id&quot;: &quot;88ffa7fb-0419-4097-8b45-24f0d843c5ea&quot;,
+    &quot;identifier&quot;: [
+        {
+            &quot;system&quot;: &quot;http://isanteplus.org/ext/task/identifier&quot;,
+            &quot;value&quot;: &quot;88ffa7fb-0419-4097-8b45-24f0d843c5ea&quot;
+        }
+    ],
+    &quot;basedOn&quot;: [
+        {
+            &quot;reference&quot;: &quot;ServiceRequest/ebf83ba0-9d3c-497f-9aa0-d839ec506202&quot;,
+            &quot;type&quot;: &quot;ServiceRequest&quot;
+        },
+        {
+            &quot;reference&quot;: &quot;ServiceRequest/73e96ecb-a78d-41c8-a55f-d9b90f759e5f&quot;,
+            &quot;type&quot;: &quot;ServiceRequest&quot;
+        }
+    ],
+    &quot;status&quot;: &quot;requested&quot;,
+    &quot;intent&quot;: &quot;order&quot;,
+    &quot;for&quot;: {
+        &quot;reference&quot;: &quot;Patient/e14e9bda-d273-4c74-8509-5732a4ebaf19&quot;,
+        &quot;type&quot;: &quot;Patient&quot;
+    },
+    &quot;encounter&quot;: {
+        &quot;reference&quot;: &quot;Encounter/7f5aabd9-6375-47c8-a8d6-30f219b6e2f1&quot;,
+        &quot;type&quot;: &quot;Encounter&quot;
+    },
+    &quot;authoredOn&quot;: &quot;2020-04-28T17:33:19+00:00&quot;,
+    &quot;owner&quot;: {
+        &quot;reference&quot;: &quot;Practitioner/f9badd80-ab76-11e2-9e96-0800200c9a66&quot;,
+        &quot;type&quot;: &quot;Practitioner&quot;
+    }
+}
+</code></pre>
+<h4 id="servicerequest">ServiceRequest</h4>
+<blockquote>
+<p><a href="https://wiki.openmrs.org/display/projects/ServiceRequest+Resource">more info</a></p>
+</blockquote>
+<p>The ServiceRequest resource represents the TestOrder placed in OpenMRS. It is referenced from the Task with the Task.basedOn element, and sent to OpenELIS with the Task to initiate the processing of the order. </p>
+<p><em>Example Service Request:</em></p>
+<pre><code class="language-json">{
+    &quot;resourceType&quot;: &quot;ServiceRequest&quot;,
+    &quot;id&quot;: &quot;73e96ecb-a78d-41c8-a55f-d9b90f759e5f&quot;,
+    &quot;status&quot;: &quot;active&quot;,
+    &quot;intent&quot;: &quot;order&quot;,
+    &quot;code&quot;: {
+        &quot;coding&quot;: [
+            {
+                &quot;code&quot;: &quot;790AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;
+            },
+            {
+                &quot;system&quot;: &quot;http://loinc.org&quot;,
+                &quot;code&quot;: &quot;14682-9&quot;
+            },
+            {
+                &quot;system&quot;: &quot;urn:oid:2.16.840.1.113883.3.7201&quot;,
+                &quot;code&quot;: &quot;790&quot;
+            }
+        ]
+    },
+    &quot;subject&quot;: {
+        &quot;reference&quot;: &quot;Patient/e14e9bda-d273-4c74-8509-5732a4ebaf19&quot;,
+        &quot;type&quot;: &quot;Patient&quot;
+    },
+    &quot;encounter&quot;: {
+        &quot;reference&quot;: &quot;Encounter/7f5aabd9-6375-47c8-a8d6-30f219b6e2f1&quot;,
+        &quot;type&quot;: &quot;Encounter&quot;
+    }
+}
+</code></pre>
+<h4 id="diagnosticreport">DiagnosticReport</h4>
+<blockquote>
+<p><a href="https://wiki.openmrs.org/display/projects/DiagnosticReport+Resource">more info</a></p>
+</blockquote>
+<p>The DiagnosticReport resource  is the container for the results of an Order, and holds these results in the DiagnosticReport.result element as references to Observation resources. </p>
+<p><em>Example Diagnostic Report</em></p>
+<pre><code class="language-json">{
+  &quot;resourceType&quot;: &quot;DiagnosticReport&quot;,
+  &quot;id&quot;: &quot;93&quot;,
+  &quot;meta&quot;: {
+    &quot;versionId&quot;: &quot;1&quot;,
+    &quot;lastUpdated&quot;: &quot;2020-04-28T17:33:36.163+00:00&quot;,
+    &quot;source&quot;: &quot;#55t4lpDZF4q3TCZ0&quot;
+  },
+  &quot;text&quot;: {
+    &quot;status&quot;: &quot;generated&quot;,
+    &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;div class=\&quot;hapiHeaderText\&quot;&gt; Untitled Diagnostic Report &lt;/div&gt;&lt;table class=\&quot;hapiPropertyTable\&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;Status&lt;/td&gt;&lt;td&gt;FINAL&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+  },
+  &quot;identifier&quot;: [
+    {
+      &quot;system&quot;: &quot;https://isanteplusdemo.com/openmrs/ws/fhir2/&quot;,
+      &quot;value&quot;: &quot;ebf83ba0-9d3c-497f-9aa0-d839ec506202&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;code&quot;: {
+    &quot;coding&quot;: [
+      {
+        &quot;code&quot;: &quot;1008AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;
+      },
+      {
+        &quot;system&quot;: &quot;http://loinc.org&quot;,
+        &quot;code&quot;: &quot;22748-8&quot;
+      },
+      {
+        &quot;system&quot;: &quot;urn:oid:2.16.840.1.113883.3.7201&quot;,
+        &quot;code&quot;: &quot;1008&quot;
+      }
+    ]
+  },
+  &quot;subject&quot;: {
+    &quot;reference&quot;: &quot;Patient/2&quot;
+  },
+  &quot;result&quot;: [
+    {
+      &quot;reference&quot;: &quot;Observation/92&quot;,
+      &quot;type&quot;: &quot;Observation&quot;
+    }
+  ]
+}
+</code></pre>
+<h4 id="observation">Observation</h4>
+<blockquote>
+<p><a href="https://wiki.openmrs.org/display/projects/Observation+Resource">more info</a></p>
+</blockquote>
+<p>The Observation resource contains the results of the Lab Order request.</p>
+<p><em>Example Observation:</em></p>
+<pre><code class="language-json">{
+  &quot;resourceType&quot;: &quot;Observation&quot;,
+  &quot;id&quot;: &quot;92&quot;,
+  &quot;meta&quot;: {
+    &quot;versionId&quot;: &quot;1&quot;,
+    &quot;lastUpdated&quot;: &quot;2020-04-28T17:33:36.124+00:00&quot;,
+    &quot;source&quot;: &quot;#xAVz0uUE6c3l42Za&quot;
+  },
+  &quot;identifier&quot;: [
+    {
+      &quot;system&quot;: &quot;https://isanteplusdemo.com/openmrs/ws/fhir2/&quot;,
+      &quot;value&quot;: &quot;ebf83ba0-9d3c-497f-9aa0-d839ec506202&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;final&quot;,
+  &quot;code&quot;: {
+    &quot;coding&quot;: [
+      {
+        &quot;code&quot;: &quot;1008AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&quot;
+      },
+      {
+        &quot;system&quot;: &quot;http://loinc.org&quot;,
+        &quot;code&quot;: &quot;22748-8&quot;
+      },
+      {
+        &quot;system&quot;: &quot;urn:oid:2.16.840.1.113883.3.7201&quot;,
+        &quot;code&quot;: &quot;1008&quot;
+      }
+    ]
+  },
+  &quot;subject&quot;: {
+    &quot;reference&quot;: &quot;Patient/2&quot;
+  },
+  &quot;valueQuantity&quot;: {
+    &quot;value&quot;: 55,
+    &quot;unit&quot;: &quot;UI/L&quot;
+  }
+}
+</code></pre>
+<h4 id="patient">Patient</h4>
+<blockquote>
+<p><a href="https://wiki.openmrs.org/display/projects/Patient+Resource">more info</a></p>
+</blockquote>
+<p>The Patient resource contains vital information for OpenELIS to fullfill the lab order request, and is referenced by the Task.</p>
+<p>Example Patient:</p>
+<pre><code class="language-json">{
+    &quot;resourceType&quot;: &quot;Patient&quot;,
+    &quot;id&quot;: &quot;e14e9bda-d273-4c74-8509-5732a4ebaf19&quot;,
+    &quot;identifier&quot;: [
+        {
+            &quot;id&quot;: &quot;5981a256-d60c-44b1-beae-9bdd2cf572f8&quot;,
+            &quot;use&quot;: &quot;official&quot;,
+            &quot;system&quot;: &quot;iSantePlus ID&quot;,
+            &quot;value&quot;: &quot;10012R&quot;
+        },
+        {
+            &quot;id&quot;: &quot;75a67d54-6fff-44d1-9c3e-2116c967b475&quot;,
+            &quot;use&quot;: &quot;usual&quot;,
+            &quot;system&quot;: &quot;Code National&quot;,
+            &quot;value&quot;: &quot;100000&quot;
+        },
+        {
+            &quot;id&quot;: &quot;29447d21-3cd6-42a9-9ab2-79ebfa710a01&quot;,
+            &quot;use&quot;: &quot;usual&quot;,
+            &quot;system&quot;: &quot;ECID&quot;,
+            &quot;value&quot;: &quot;04d759e0-5d02-11e8-b899-0242ac12000b&quot;
+        }
+    ],
+    &quot;active&quot;: true,
+    &quot;name&quot;: [
+        {
+            &quot;id&quot;: &quot;511275de-e301-44a3-95d2-28d0d3b35387&quot;,
+            &quot;family&quot;: &quot;Mankowski&quot;,
+            &quot;given&quot;: [
+                &quot;Piotr&quot;
+            ]
+        }
+    ],
+    &quot;gender&quot;: &quot;male&quot;,
+    &quot;birthDate&quot;: &quot;1987-01-01&quot;,
+    &quot;deceasedBoolean&quot;: false,
+    &quot;address&quot;: [
+        {
+            &quot;id&quot;: &quot;d4f7c809-3d01-4032-b64d-4c22e8eccbbc&quot;,
+            &quot;use&quot;: &quot;home&quot;,
+            &quot;country&quot;: &quot;Haiti&quot;
+        }
+    ]
+}
+
+</code></pre>
+<h4 id="useful-links">Useful Links</h4>
+<p><strong>Relevant FHIR Docs</strong>
+* <a href="https://www.hl7.org/fhir/task.html#12.1.2.1">Using Tasks in a RESTful Context</a>
+* <a href="https://www.hl7.org/fhir/workflow-module.html">Workflow Module</a>
+* <a href="https://www.hl7.org/fhir/diagnostics-module.html">Diagnostic Module</a>
+* <a href="https://www.hl7.org/fhir/workflow-communications.html#12.6.2.1">Example: Workflow states for a lab order for a blood test</a>
+* <a href="https://www.hl7.org/fhir/workflow-management.html#optiong">Option G: POST of Task to fulfiller's system</a></p>
+<p><strong>Relevant OpenMRS Talk Posts</strong>
+<a href="https://talk.openmrs.org/t/the-handling-and-mapping-of-lab-order-status-for-the-lab-workflow/26348">The handling and mapping of lab order status for the lab workflow</a></p>
+<!-- END INCLUDE -->
+
+<h4 id="openmrs-3x">Openmrs 3.x</h4>
+<ol>
+<li>
+<p>Setup OpenRMS 3.x on top an instance of the Reference Application 
+<em>click here for <a href="https://wiki.openmrs.org/display/projects/3.x+Implementer+Documentation">more infromation</a></em></p>
+</li>
+<li>
+<p><a href="https://wiki.openmrs.org/display/docs/Administering+Modules">Install</a> the Following Modules</p>
+<ul>
+<li><a href="https://github.com/openmrs/openmrs-module-fhir2">FHIR2 module</a> version  &gt;= 1.5.0  </li>
+<li><a href="https://github.com/openmrs/openmrs-module-labonfhir">Lab on FHIR</a> module </li>
+<li><a href="https://github.com/openmrs/openmrs-module-orderentryui">Order Entry Ui Module</a></li>
+<li><a href="https://github.com/openmrs/openmrs-owa-orderentry">Order Entry Owa</a>   </li>
+</ul>
+</li>
+<li>
+<p>Configure the required settings </p>
+<ul>
+<li><code>labonfhir.openElisUrl</code> ,The URL for the FHIR server where OpenELIS polls the Orders From.</li>
+<li><code>labonfhir.openElisUserUuid</code> ,UUID for the service user that represents OpenELIS   <br />
+<em><a href="https://github.com/openmrs/openmrs-module-labonfhir#usage">see more</a> on Configuring the above Modules.</em>  <br />
+<em>Note: The Lab test Concept should be of class <code>Test</code> ,and should be mapped to a  <code>Loinc code</code> that matches a the <code>Test Loinc Code</code> in OpenELIS</em></li>
+</ul>
+</li>
+<li>
+<p>Go to the Reff App (2.x) Patient Dashbord  <code>Prescribed Medication</code> Widget.
+<img alt="screen1" src="../../img/widget.png" />  <br />
+<em>see more on <a href="https://wiki.openmrs.org/display/projects/Order+Entry+UI+End+User+Guide+for+Creating+Drug+Orders">Creating Orders</a> using the Order Entry Owa.</em>
+<img alt="screen1" src="../../img/order.png" />   </p>
+<p>If the <a href="https://github.com/openmrs/openmrs-module-labonfhir">Lab on FHIR</a> module is rightly configured ,it will generate the lab FHIR Bundle and push to the remote Fhir Server for OpenELIS to poll the orders</p>
+</li>
+<li>
+<p>Start up the OpenELIS Update Task
+In order to be able to poll OpenELIS for available results, we need to turn on the following task in the OpenMRS scheduler:
+<code>System Administration</code> → <code>Advanced Administration</code> → <code>Scheduler</code> → <code>Manage Scheduler</code>
+<img alt="screen1" src="../../img/omrsoe1.png" /></p>
+</li>
+<li>
+<p>Enable the <a href="https://github.com/openmrs/openmrs-esm-patient-chart/tree/master/packages/esm-patient-test-results-app">patient-test-results-app</a> for the 3.x Frontenx.
+Go to the Patient DashBoard in 3.x ui and click Test Results. 
+<img alt="screen1" src="../../img/test-results.png" /></p>
+</li>
+</ol>
+<h4 id="isanteplus">iSantéPlus</h4>
+<ol>
+<li>
+<p>Install iSantePlus using one of <a href="https://github.com/IsantePlus/isanteplus_installation#isanteplus-installation">these approaches</a>.</p>
+</li>
+<li>
+<p><a href="https://wiki.openmrs.org/display/docs/Administering+Modules">Install</a> the Following Modules</p>
+<ul>
+<li><a href="https://github.com/openmrs/openmrs-module-fhir2">FHIR2 module</a> version  &gt;= 1.5.0 </li>
+<li><a href="https://github.com/openmrs/openmrs-module-labonfhir">Lab on FHIR</a> module </li>
+<li><a href="https://github.com/IsantePlus/openmrs-module-isanteplus-fhir">IsantePlus FHIR Module</a><br />
+  Note : The above modules are installed by default by the docker setup </li>
+</ul>
+</li>
+<li>
+<p>Configure the required settings .</p>
+<ul>
+<li><code>labonfhir.openElisUrl</code> ,The URL for the FHIR server where OpenELIS polls the Orders From.</li>
+<li><code>labonfhir.openElisUserUuid</code> ,UUID for the service user that represents OpenELIS </li>
+</ul>
+<p><a href="https://github.com/openmrs/openmrs-module-labonfhir#usage">see more</a> on Configuring the Lab On FHIR Modules.  </p>
+</li>
+<li>
+<p>To place Lab Orders ,Fill  the <code>Laboratory Analysis Form</code>  , select OPenELIS as destination Lab and Save.   <br />
+<code>Find Patient</code> → <code>Patient DashBord</code> → <code>Forms</code> → <code>Laboratory Analysis</code>
+<img alt="screen1" src="../../img/dashbordForms.png" />
+<img alt="screen1" src="../../img/formslabAnalysis.png" />
+<img alt="screen1" src="../../img/labAnanlyisisForm.png" />
+NB. The Patient Must have an active vist</p>
+</li>
+<li>
+<p>Start up the OpenELIS Update Task in order to poll for Completed Results from OpenELIS <br />
+<code>System Administration</code> → <code>Advanced Administration</code> → <code>Scheduler</code> → <code>Manage Scheduler</code>
+ <img alt="screen1" src="../../img/omrsoe1.png" /></p>
+</li>
+<li>
+<p>To View The results ,Go to <code>Laboratory History</code> on the Patient DashBoard under General Actions.   <br />
+<code>Find Patient</code> → <code>Patient DashBord</code> → <code>Laboratory History</code>
+<img alt="screen1" src="../../img/dashbordLabHistory.png" />
+<img alt="screen1" src="../../img/labHistory.png" /></p>
+</li>
+</ol>
+<h4 id="openelis-global-26x">OpenELIS Global 2.6.x</h4>
+<p>The FHIR based Lab Workflow is supported in OpenELIS 2.6 .  </p>
+<ol>
+<li>
+<p>Start an instance of OpenELIS with the following configuration properties set in the properties file.</p>
+<ul>
+<li>
+<p><code>org.openelisglobal.fhirstore.uri=&lt;localFhirServerUrl&gt;</code> . This is the Fhir Server that runs paralel with OPenELIS</p>
+</li>
+<li>
+<p><code>org.openelisglobal.remote.source.uri=&lt;remoreFhirServerUr&gt;</code>. This is the Fhir server that the Lab on FHIR module points to ie via the <code>labonfhir.openElisUrl</code></p>
+</li>
+<li><code>org.openelisglobal.remote.source.updateStatus=true</code></li>
+<li><code>org.openelisglobal.remote.source.identifier=Practitioner/&lt;userUuuid&gt;</code> .This is the UUID of the user who created the Order ie <code>labonfhir.openElisUserUuid</code></li>
+<li>
+<p><code>org.openelisglobal.task.useBasedOn=true</code></p>
+</li>
+<li>
+<p><code>org.openelisglobal.fhir.subscriber=h&lt;remoreFhirServerUrl&gt;</code> .</p>
+</li>
+<li><code>org.openelisglobal.fhir.subscriber.resources=Task,Patient,ServiceRequest,DiagnosticReport,Observation,Specimen,Practitioner,Encounter</code></li>
+</ul>
+</li>
+<li>
+<p>Ensure OpenELIS has the test that maps to the same LOINC code as the test Concept in OpenMRS.
+This can be added via the<br />
+<code>Admin page</code> → <code>Test Management</code> → <code>Add Tests</code> 
+<img alt="screen1" src="../../img/addTest.png" /></p>
+</li>
+<li>
+<p>Configure OpenELIS to accept electronic orders. <br />
+<code>Admin</code> → <code>Order Entry Configuration</code> → <code>external orders</code>
+<img alt="screen1" src="../../img/accepteorder.png" /></p>
+</li>
+<li>
+<p>Search for the Electronic Orders ie
+ <code>Order</code> → <code>Electronic Orders</code> and then Complete the Order
+Note that the user should have the right Lab Unit Priviledges to complete the Order
+<img alt="screen1" src="../../img/eOrders.png" /></p>
+</li>
+<li>
+<p>After Results are captured and Validated , OpenELIS sends back the results to OpenMRS as a Diagnostic Report with an Observation </p>
+</li>
+</ol>
+<!-- END INCLUDE -->
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../demo-directory.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Demo Servers" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Demo Servers
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../mpi-workflows.html" class="md-footer__link md-footer__link--next" aria-label="Next: Client Registry / MPI Workflows" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Client Registry / MPI Workflows
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.092fa1f6.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.5a9542cf.min.js"></script>
+      
+    
+  </body>
+</html>
